@@ -1,0 +1,54 @@
+﻿0_4WGZ3N9Q 0_7I2WVE25 0_989FXHWU 0_RCCCFZDS 0_ZUPZAWRK
+
+@misc{weissteingeometric,
+	type = {Text},
+	title = {Geometric Distribution -- from Wolfram {MathWorld}},
+	copyright = {Copyright 1999-2013 Wolfram Research, Inc.  See http://mathworld.wolfram.com/about/terms.html for a full terms of use statement.},
+	url = {http://mathworld.wolfram.com/GeometricDistribution.html},
+	language = {en},
+	urldate = {2013-07-23},
+	author = {Weisstein, Eric W.},
+	note = {The geometric distribution is a discrete distribution for n=0, 1, 2, ... having probability density function P(n) = p(1-p){\textasciicircum}n (1)   = pq{\textasciicircum}n, (2)  where 0{\textless}p{\textless}1, q=1-p, and distribution function is D(n) = sum\_(k=0){\textasciicircum}({n)P(k)} (3)   = 1-q{\textasciicircum}(n+1). (4)  The geometric distribution is the only discrete memoryless random distribution. It is a discrete analog of the exponential distribution. Note that some authors (e.g., Beyer 1987, p. 531; Zwillinger 2003, pp. 630-631) prefer to define the...},
+	keywords = {{60E}, {62E}, {Mathematics:History} and {Terminology:Mathematica} Commands, {Mathematics:MathWorld} {Contributors:Ross}, {Mathematics:Probability} and {Statistics:Statistical} {Distributions:Discrete} Distributions},
+	file = {Snapshot:/Users/vrangbaek/Library/Application Support/Firefox/Profiles/0l9vbdou.default/zotero/storage/X3QCEX3Q/GeometricDistribution.html:text/html}
+}
+@book{olesen2007introduktion,
+	address = {Frederiksv{\ae}rk},
+	title = {Introduktion til sandsynlighedsregning og statistik},
+	publisher = {Forlaget Nautilus},
+	author = {Olesen, Mogens N{\o}rgaard},
+	year = {2007},
+	keywords = {{\O}k A, statistics}
+}
+@book{degroot2012probability,
+	address = {Boston},
+	edition = {4th ed},
+	title = {Probability and statistics},
+	isbn = {9780321500465},
+	lccn = {QA273 .D35 2012},
+	publisher = {Addison-Wesley},
+	author = {{DeGroot}, Morris H. and Schervish, Mark J.},
+	year = {2012},
+	keywords = {Mathematical statistics, {\O}k A, Probabilities, statistics},
+	file = {DeGroot_2012_Probability and statistics.pdf:/Users/vrangbaek/Library/Application Support/Firefox/Profiles/0l9vbdou.default/zotero/storage/UPWBVUJP/DeGroot_2012_Probability and statistics.pdf:application/pdf}
+}
+@book{hansen2012statistik,
+	address = {K{\o}benhavn},
+	edition = {2},
+	title = {Statistik i {\o}konomisk perspektiv},
+	isbn = {9788741256047  8741256042},
+	language = {Danish},
+	publisher = {Hans Reitzels Forlag},
+	author = {Hansen, Kenneth and Kolds{\o}, Charlotte},
+	year = {2012}
+}
+@book{menzel20091430introduction,
+	title = {14.30 Introduction to Statistical Methods in Economics, Spring 2009},
+	copyright = {License: Creative Commons {BY-NC-SA}},
+	url = {http://ocw.mit.edu/courses/economics/14-30-introduction-to-statistical-methods-in-economics-spring-2009/index.htm},
+	urldate = {2013-07-30},
+	publisher = {Massachusetts Institute of Technology: {MIT} {OpenCourseWare}},
+	author = {Menzel, Konrad},
+	year = {2009},
+	note = {http://ocw.mit.edu/courses/economics/14-30-introduction-to-statistical-methods-in-economics-spring-2009/index.htm}
+}

@@ -1,0 +1,1432 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pdfsync}
+\end_preamble
+\options unicode=true,hidelinks
+\use_default_options true
+\maintain_unincluded_children false
+\language danish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Noter til faget Økonometri A
+\end_layout
+
+\begin_layout Author
+Anders Vrangbæk Riis
+\begin_inset Newline newline
+\end_inset
+
+(
+\begin_inset CommandInset href
+LatexCommand href
+target "mail@avriis.eu"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Date
+Økonomisk Institut, Københavns Universitet
+\begin_inset Newline newline
+\end_inset
+
+Efterårssemestret 2013
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+opts_chunk$set(results='asis', echo=FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Indledning
+\end_layout
+
+\begin_layout Standard
+Dette dokument er tiltænkt som supplement til undervisningsmaterialet til
+ faget Økonometri A på Økonomisk Institut, Københavns Universitet.
+\end_layout
+
+\begin_layout Standard
+Mange af eksemplerne er hentet fra tidligere eksamensopgaver i Økonometri
+ A, som alle er hentet på side 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bit.ly/17DofqZ"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Part
+Sandsynlighedsteoretiske begreber
+\end_layout
+
+\begin_layout Section
+Udfald, hændelser, sandsynligheder og variable
+\end_layout
+
+\begin_layout Standard
+Et sandsynlighedsfelt 
+\begin_inset Formula $(U,P)$
+\end_inset
+
+ består af et udfaldsrum 
+\begin_inset Formula $U$
+\end_inset
+
+ med en samling sandsynligheder 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ Enhver delmængde af et udfaldsrum 
+\begin_inset Formula $U$
+\end_inset
+
+ kaldes en hændelse og kan skrives som 
+\begin_inset Formula $A\subseteq U$
+\end_inset
+
+.
+ En begivenhed eller en hændelse 
+\begin_inset Formula $A$
+\end_inset
+
+ er en samling af udfald 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Sandsynligheden for en hændelse 
+\begin_inset Formula $A$
+\end_inset
+
+ er defineret ved 
+\begin_inset Formula $\Pr(A)=\sum_{a\in A}\Pr(a)$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+(Olesen 2007, 42-43)
+\end_layout
+
+\end_inset
+
+ Hvis en begivenhed 
+\begin_inset Formula $A$
+\end_inset
+
+ indeholder 
+\begin_inset Formula $m$
+\end_inset
+
+ udfald, så 
+\begin_inset Formula $\Pr(A)=\frac{m}{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En tilfældig (stokastisk) variabel er en funktion bestående af rationelle
+ tal i et givent udfaldsrum.
+ Disse tilfældige variabler anvendes til at modellere ukendte mængder i
+ statistiske analyser.
+ For hver stokastisk variabel 
+\begin_inset Formula $X$
+\end_inset
+
+ og hver sæt af reelle tal 
+\begin_inset Formula $C$
+\end_inset
+
+, kan vi udregne sandsynligheden for, at den stokastiske variabel tager
+ sin værdi fra 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ Samlingen af disse sandsynligheder er fordelingen af 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Disse fordelinger kan være diskrete eller kontinuerlige.
+\end_layout
+
+\begin_layout Standard
+For at finde sandsynligheden for en fælleshændelse ganger vi sandsynlighden
+ for de to hændelser med hinanden.
+ Hvis eksempelvis 
+\begin_inset Formula $\Pr(A)=\Pr(B)=1/52$
+\end_inset
+
+ (sandsynligheden for at trække et bestemt kort i et spil kort), har vi
+ 
+\begin_inset Formula $\Pr(A\cap B)=1/52\times1/52=1/2704$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Hvis 
+\begin_inset Formula $X$
+\end_inset
+
+ er normalfordelt, betegner vi den kumulative fordelingsfunktion med 
+\begin_inset Formula $\Phi(x)$
+\end_inset
+
+ og tæthedsfunktionen med 
+\begin_inset Formula $\phi(x)$
+\end_inset
+
+.
+ Hvis ikke 
+\begin_inset Formula $X$
+\end_inset
+
+ er normalfordelt anvender vi 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ for tæthedsfunktionen, mens 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ betegner den kumulative fordelingsfunktion.
+\end_layout
+
+\begin_layout Standard
+Den kumulative fordelingsfunktion af en variable 
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+after "470"
+key "degroot2012probability"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis man skal udregne en opgave, hvor man skal finde ud af, hvad sandsynligheden
+ er for, at et tilfældigt udfald ligger indenfor 1 af middelværdien, og
+ at variablen er normalfordelt med gennemsnittet 
+\begin_inset Formula $\mu$
+\end_inset
+
+ og variansen 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, kan problemet opskrives som 
+\begin_inset Formula 
+\[
+\Pr(|X-\mu|\leq1)=\Pr(\frac{|X-\mu|}{\sigma}\leq\frac{1}{\sigma})=\Phi(1/\sigma)-\Phi(-1/\sigma).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Betingede sandsynligheder
+\end_layout
+
+\begin_layout Standard
+I dette afsnit ser vi på sandsynligheder af en hændelse, givet at en anden
+ hændelse allerede er indtruffet.
+ Denne betingede sandsynlighed er defineret ved
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr(A|B)=\frac{\Pr(A\cap B)}{\Pr(B)}.
+\]
+
+\end_inset
+
+Sandsynligheden for 
+\begin_inset Formula $A$
+\end_inset
+
+ givet 
+\begin_inset Formula $B$
+\end_inset
+
+ er således givet ved forholdet mellem sandsynligheden for fælleshændelsen
+ 
+\begin_inset Formula $A\cap B$
+\end_inset
+
+ og sandsynligheden for 
+\begin_inset Formula $B$
+\end_inset
+
+; jo større sandsynligheden for 
+\begin_inset Formula $B$
+\end_inset
+
+, jo mindre er sandsynligheden for 
+\begin_inset Formula $A$
+\end_inset
+
+ givet 
+\begin_inset Formula $B$
+\end_inset
+
+, eller ligeledes, jo større sandsynligheden er for fælleshændelsen 
+\begin_inset Formula $A\cap B$
+\end_inset
+
+, jo større er sandsynlighden for hændelsen 
+\begin_inset Formula $A$
+\end_inset
+
+ givet 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Antag eksempelvis, 1) at vi har 1200 pendlere, hvoraf 800 tager bilen på
+ arbejde, mens resten foretrækker cyklen, 2) at halvdelen af pendlerne er
+ mænd, og 3) at sandsynligheden for at køre bil, givet at pendleren er mand,
+ er 0,6.
+ Den tilsvarende sandsynlighed, givet at pendleren er kvinde, er 0,2.
+ Vi skal nu finde ud af, hvad sandsynligheden er, for at en pendler er en
+ mand, givet at der cykles til arbejde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+PMcykel <- (0.4*0.5)/0.6
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Først finder vi sandsynligheden for, at pendleren cykler tilbage arbejde,
+ hvilket er givet ved 
+\begin_inset Formula $P(\text{cykel})=1-P(\text{bil})$
+\end_inset
+
+, da pendleren enten cykler eller kører i bil til arbejde.
+ Vi ser, at vi behøver sandsynligheden for at køre bil.
+ Sandsynligheden for at køre bil kan vi udregne ved hjælp af loven om total
+ sandsynlighed
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\size normal
+\emph on
+Law of total probability: 
+\size default
+\emph default
+Teorem 2.1.4 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, side 60.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+\Pr(A)=\sum_{j=1}^{k}\Pr(B_{j})\Pr(A|B_{j}),\label{eq:law_of_total_prob}
+\end{equation}
+
+\end_inset
+
+hvor 
+\begin_inset Formula $\Pr(A)$
+\end_inset
+
+ er sandsynlighden for at køre bil, 
+\begin_inset Formula $\Pr(B_{j})$
+\end_inset
+
+ er sandsynligheden for at være mand henholdsvis kvinde, mens 
+\begin_inset Formula $\Pr(A|B_{j})$
+\end_inset
+
+ er sandsynligheden for at køre bil givet ens køn.
+ Værdierne for 
+\begin_inset Formula $\Pr(A|B_{j})$
+\end_inset
+
+ har vi fået givet (se ovenfor), således at 
+\begin_inset Formula $\Pr(A|B_{\text{mand}})=\Pr(\text{bil}|\text{mand})=0,6$
+\end_inset
+
+ og 
+\begin_inset Formula $\Pr(A|B_{\text{kvinde}})=0,2$
+\end_inset
+
+.
+ Sandsynligheden for at køre bil er derfor 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $P(\text{bil})=0,6\times0,5+0,2\times0,5=0,4$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang danish
+.
+ Nu kan vi udregne sandsynligheden for, at tage cyklen (uanset køn) som
+ 
+\begin_inset Formula 
+\[
+P(\text{cykel})=1-P(\text{bil})=1-0,4=0,6.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi anvender nu Bayes' formel,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Teorem 2.3.1 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, side 77.
+\end_layout
+
+\end_inset
+
+ der fortæller os at
+\begin_inset Formula 
+\begin{equation}
+\Pr(B_{i}|A)=\frac{\Pr(B_{i})\Pr(A|B)}{\sum_{j=1}^{k}\Pr(B_{j})\Pr(A|B_{j})},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hvilket kan reduceres til 
+\begin_inset Formula 
+\[
+\Pr(B_{i}|A)=\frac{\Pr(B_{i})\Pr(A|B)}{\Pr(A)}
+\]
+
+\end_inset
+
+ givet loven om total sandsynlighed (ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:law_of_total_prob"
+
+\end_inset
+
+).
+ Vi kan derfor nu sige, at
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(M|\text{cykel})=\frac{P(M)P(\text{cykel}|M)}{P(\text{cykel})}=\frac{0,5\times0,4}{0,6}=\frac{1}{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Er 
+\begin_inset Formula $\Pr(A|B)=1-\Pr(A^{c}|B)?$
+\end_inset
+
+ Hvis ikke, kan jeg ikke forklare, hvor udtrykket 
+\begin_inset Formula $P(\text{cykel}|M)=0,4$
+\end_inset
+
+ kommer fra...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 2.1 fra side 55 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+ samt fra side 71 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "olesen2007introduktion"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Part
+Fordelinger
+\end_layout
+
+\begin_layout Paragraph
+Mål
+\end_layout
+
+\begin_layout Itemize
+Identificere de forskellige fordelinger
+\end_layout
+
+\begin_layout Itemize
+Kende deres middelværdi samt varians
+\end_layout
+
+\begin_layout Section
+Bernoulli-fordeling
+\end_layout
+
+\begin_layout Section
+Binomialfordelinger
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Binomialfordelinger
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Som vi tidligere har set, antager opgave 2
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Opgave-2-fra"
+
+\end_inset
+
+ fra sommereksaminen 2012, at vi har 1200 pendlere, hvoraf 800 tager bilen
+ og resten (
+\begin_inset Formula $1200-800=400$
+\end_inset
+
+) cykler.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se siden med gamle eksamensopgaver for Økonometri A her: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bit.ly/17DofqZ"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ Den første delopgave beder os om at beskrive med en sandsynlighedsmodel
+ den hændelse, at der med tilbagelægning trækkes ti tilfældige pendlere.
+ Først, lader vi 
+\begin_inset Formula $X$
+\end_inset
+
+ være en stokastisk variabel, der beskriver det antal gange 
+\begin_inset Formula $i$
+\end_inset
+
+, hvor vi trækker en bilist.
+ Vi ser, at vi har to mulige udfald for hvert forsøg (udtrækning), nemlig
+ bilist eller cyklist, hvorfor vi konkluderer, at vores variabel er binomialford
+elt.
+ En sådan fordeling skrives som 
+\begin_inset Formula 
+\[
+X\sim B(n,p),
+\]
+
+\end_inset
+
+hvor 
+\begin_inset Formula $n$
+\end_inset
+
+ er antallet af forsøg, i vores tilfælde 10, og 
+\begin_inset Formula $p$
+\end_inset
+
+ er sandsynligheden for 
+\begin_inset Quotes eld
+\end_inset
+
+succes
+\begin_inset Quotes erd
+\end_inset
+
+ (at trække en bilist i vores forsøg, 
+\begin_inset Formula $800/1200=2/3$
+\end_inset
+
+).
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "olesen2007introduktion"
+
+\end_inset
+
+ for mere om binomialfordelingen og dens danske terminologi.
+\end_layout
+
+\end_inset
+
+ Vi kan således beskrive situationen med sandsynlighedsmodellen 
+\begin_inset Formula $X\sim B(10,2/3)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+VARX0 <- 20/9
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi bliver også bedt om at finde det forventede antal bilister samt at finde
+ variansen.
+ Da vi har defineret variablen 
+\begin_inset Formula $X$
+\end_inset
+
+ som antallet af gange, vi trækker en bilist i vores eksperiment, udregner
+ vi den forventede værdi af 
+\begin_inset Formula $X$
+\end_inset
+
+, hvilket i tilfælde af en stokastisk variabel med en binomialfordeling
+ er givet ved 
+\begin_inset Formula 
+\begin{equation}
+E(X)=np.
+\end{equation}
+
+\end_inset
+
+Vi får således 
+\begin_inset Formula $E(X)=10\times2/3=20/3$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Variansen er givet ved sætningen 
+\begin_inset Formula 
+\begin{equation}
+\text{Var}(X)=np(1-p),\label{eq:Varbinom}
+\end{equation}
+
+\end_inset
+
+hvilket i vores eksempel giver 
+\begin_inset Formula $\text{Var(X)}=10\times2/3\times1/3=20/9=\Sexpr{VARX0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Et andet eksempel på en variabel med en binomialfordeling er en variabel,
+ der beskriver de elever, der har opnået en højere resultat i den anden
+ test i figur 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Resultater-fra-to"
+
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Opgave 3, sommereksamen 2012.
+\end_layout
+
+\end_inset
+
+ Variablen kalder vi igen 
+\begin_inset Formula $X$
+\end_inset
+
+ og kan beskrives som
+\begin_inset Formula 
+\[
+X\sim\text{Bin}(26,17/26).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultater fra to matematiktest, marts 2011
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resultater-fra-to"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pasted1.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 5.2 fra side 275 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+ samt afsnit 7.
+ fra side 125 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "olesen2007introduktion"
+
+\end_inset
+
+ for nærmere uddybning af variable med binomialfordelinger.
+\end_layout
+
+\begin_layout Section
+Poisson-fordeling
+\end_layout
+
+\begin_layout Section
+Uniformfordeling
+\end_layout
+
+\begin_layout Standard
+Hvis 
+\begin_inset Formula $X$
+\end_inset
+
+ har en diskret uniform fordeling kan fordelingsfunktionen skrives som 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & \frac{1}{b-a+1}\text{for }x=a,\dotsc,b,0\text{otherwise}\\
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hypergeometriske fordelinger
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hypergeometriske fordelinger
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hypergeometriske fordelinger anvendes, når vi har en Bernoulli stokastisk
+ variabel med en endelig population, hvorfra vi trækker uden tilbagelægning.
+ Vi kan eksempelvis antage, at vi har en boks med 
+\begin_inset Formula $A$
+\end_inset
+
+ røde kugler og 
+\begin_inset Formula $B$
+\end_inset
+
+ blå kugler, hvorfra vi trækker 
+\begin_inset Formula $n\geq0$
+\end_inset
+
+ kugler uden tilbagelægning.
+ Da vi ikke lægger nogle kugler tilbage, må 
+\begin_inset Formula $n\leq A+B$
+\end_inset
+
+ (vi kan ikke trække flere kugler, end der er, når vi ikke lægger nogle
+ tilbage i boksen).
+ Når vi trækker minimum én kugle (
+\begin_inset Formula $n\geq1$
+\end_inset
+
+), kan vi skrive udfaldet, at kuglen er rød som 
+\begin_inset Formula $X_{i}=1$
+\end_inset
+
+.
+ Hvert udfald 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ har en Bernoulli-fordeling, men de er ikke uafhængige, fordi sandsynligheden
+ for et givet udfald ændrer sig, når vi ikke lægger kugler tilbage i boksen.
+ Da 
+\begin_inset Formula $X$
+\end_inset
+
+ er afhængig af tidligere udfald, kan 
+\begin_inset Formula $X$
+\end_inset
+
+ ikke siges at have en binomialfordeling.
+\end_layout
+
+\begin_layout Standard
+En hypergeometrisk fordeling kan siges at have parametrene 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ og 
+\begin_inset Formula $n$
+\end_inset
+
+, hvor 
+\begin_inset Formula $A$
+\end_inset
+
+ er det ønskede udfald (succes), mens 
+\begin_inset Formula $B=T-A$
+\end_inset
+
+, hvor 
+\begin_inset Formula $T$
+\end_inset
+
+ er antallet af enheder i den endelige population, hvoraf udfaldene 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ trækkes.
+\end_layout
+
+\begin_layout Standard
+Variansen for en variabel med en hypergeometrisk fordeling er givet ved
+ udtrykket 
+\begin_inset Formula 
+\begin{equation}
+\text{Var}(X)=\frac{nAB}{(A+B)^{2}}\times\frac{A+B-n}{A+B-1},\label{eq:hypergeoVAR}
+\end{equation}
+
+\end_inset
+
+mens middelværdien er givet ved 
+\begin_inset Formula 
+\begin{equation}
+E(X)=\frac{nA}{A+B}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis vi sammenligner med en udvælgelsesmetode med tilbagelægning ser vi,
+ at middelværdien af det ønskede udfald i begge tilfælde er 
+\begin_inset Formula $nA/(A+B)$
+\end_inset
+
+, men at variansen ændres.
+ Variansen kan skrives som 
+\begin_inset Formula $np(1-p)$
+\end_inset
+
+ med tilbagelægning (se ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Varbinom"
+
+\end_inset
+
+), mens variansen uden tilbagelægning kan skrives som 
+\begin_inset Formula 
+\begin{eqnarray}
+\text{Var}(X) & = & np(1-p)\frac{T-n}{T-1},\nonumber \\
+\text{Var}(X) & = & np(1-p)\alpha\label{eq:Var_hyper_alph}
+\end{eqnarray}
+
+\end_inset
+
+ hvor 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ er den faktor med hvilken variansen ændres (formindskes), når vi ikke anvender
+ tilbagelægning.
+ Denne faktor 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ siger noget om, hvordan variansen ændrer sig, når vi sammenligner henholdsvis
+ en udvælgelsesmetode med og uden tilbagelægning.
+ Vi ser, at 
+\begin_inset Formula $\alpha\to1$
+\end_inset
+
+, når 
+\begin_inset Formula $T\to\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>= 
+\end_layout
+
+\begin_layout Plain Layout
+
+alpha <- (1200-10)/(1200-1)
+\end_layout
+
+\begin_layout Plain Layout
+
+VARX <- 10*(2/3)*(1-2/3)*alpha
+\end_layout
+
+\begin_layout Plain Layout
+
+VARX2 <- ((10*800*400)/(1200^2))*((1200-10)/(1200-1))
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Hvis vi vender tilbage til vores udtrækning med tilbagelægning af ti pendlere
+ ud af 1200, hvoraf 800 tager bilen og 400 tager cyklen (se side 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Opgave-2-fra"
+
+\end_inset
+
+), kan vi nu se på, hvad der sker, hvis vi laver en udtrækning uden tilbagelægni
+ng.
+ Middelværdien er den samme, dsv.
+ 
+\begin_inset Formula $E(X)=np=10\times2/3=20/3$
+\end_inset
+
+, men variansen ændrer sig med faktoren 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ (se ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Var_hyper_alph"
+
+\end_inset
+
+).
+ I pendlereksemplet er 
+\begin_inset Formula $T=1800$
+\end_inset
+
+, så er 
+\begin_inset Formula $\alpha=(1200-10)/(1200-1)=$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{alpha}
+\end_layout
+
+\end_inset
+
+, hvorfor 
+\begin_inset Formula 
+\[
+\text{Var}(X)=10\times2/3\times(1-2/3)\times\Sexpr{alpha}=\Sexpr{format(VARX,decimal.mark=",")}.
+\]
+
+\end_inset
+
+Udregnet med ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:hypergeoVAR"
+
+\end_inset
+
+, har vi 
+\begin_inset Formula 
+\[
+\text{VAR}(X)=\frac{10\times800\times400}{1200^{2}}\times\frac{1200-10}{1200-1}=\Sexpr{format(VARX2,decimal.mark=",")},
+\]
+
+\end_inset
+
+ hvilket naturligvis giver samme resultat.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+I rettevejledningen til eksamenen (Sommer 2012) vises resultatet 2,08...
+\end_layout
+
+\end_inset
+
+ Sammenlignet med variansen i første del af spørgsmålet, hvor vi lavede
+ udtrækningen med tilbagelægning, har vi nu en lavere varians (
+\begin_inset Formula $\Sexpr{VARX0}>\Sexpr{VARX}$
+\end_inset
+
+), men som vi noterede ovenfor mindskes denne forskel, jo større populationen
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ bliver.
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 5.3 fra side 281 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Prior- og posteriorfordelinger
+\end_layout
+
+\begin_layout Standard
+Fordelingen af en parameter før iagttagelse af data kaldes for priorfordelingen,
+ hvorimod den betingende fordeling af parameteren givet det observerede
+ data kaldes for posteriorfordelingen.
+\end_layout
+
+\begin_layout Standard
+I vores eksempel med pendlerene, er sandsynligheden for, at pendleren er
+ en mand er 0,5 før vi har observeret nogle data, hvorfor fordelingen af
+ denne parameter er priorfordelingen.
+ Efter vi har nogle observationer ændrer sandsynligheden sig til 1/3 (posteriorf
+ordelingen).
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 7.2 fra side 385 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Konfidentsintervaller
+\end_layout
+
+\begin_layout Standard
+Et konfidensinterval med en estimator for et parameter for en variabel,
+ der følger en binomial fordeling kan gives ved
+\begin_inset Formula 
+\[
+\hat{p}\pm z\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eksemplet om de 26 tilfældigt udvalge elever og deres resultater fra de
+ to matematiktest kan anvendes til at illustrere, hvordan kan konstruerer
+ et 95% konfidensinterval for 
+\begin_inset Formula $p$
+\end_inset
+
+, som er andelen af eleverne, der fik et bedre resultat i anden test.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Sommereksamen 2012, spørgsmål 3.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "Noter til ØkA"
+options "bibtotoc,chicago"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Gloseliste
+\end_layout
+
+\begin_layout Section
+Dansk-engelsk
+\end_layout
+
+\begin_layout Description
+Tæthedsfunktion Probability density function
+\end_layout
+
+\begin_layout Description
+Kumulativ
+\begin_inset space ~
+\end_inset
+
+fordelingsfunktion Cumulative distribution function
+\end_layout
+
+\begin_layout Section
+Engelsk-dansk
+\end_layout
+
+\begin_layout Description
+Probability
+\begin_inset space ~
+\end_inset
+
+density
+\begin_inset space ~
+\end_inset
+
+function Tæthedsfunktion
+\end_layout
+
+\begin_layout Description
+Cumulative
+\begin_inset space ~
+\end_inset
+
+distribution
+\begin_inset space ~
+\end_inset
+
+function Kumulativ fordelingsfunktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

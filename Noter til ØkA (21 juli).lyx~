@@ -1,0 +1,8361 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\usepackage{pdfsync}
+\end_preamble
+\options unicode=true,hidelinks
+\use_default_options true
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language danish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Noter til faget Økonometri A
+\end_layout
+
+\begin_layout Author
+Anders Vrangbæk Riis
+\begin_inset Newline newline
+\end_inset
+
+(
+\begin_inset CommandInset href
+LatexCommand href
+target "mail@avriis.eu"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+Økonomisk Institut, Københavns Universitet
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<echo=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+opts_chunk$set(results='asis', echo=FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hvad er 
+\begin_inset Formula $x^{-}$
+\end_inset
+
+ på eksempelvis side 110 i ?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Forord
+\end_layout
+
+\begin_layout Standard
+Dette dokument er tiltænkt som supplement til undervisningsmaterialet til
+ undervisngen af hold 8 i faget Økonometri A på Økonomisk Institut, Københavns
+ Universitet, hvis fagbeskrivelsen kan findes her:
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Hvis url'erne, der er anvendt i dokumentet her, er for lange, er de forkortet
+ ved hjælp af bit.ly-tjenesten.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bit.ly/17AyZFL"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mange af eksemplerne er hentet fra tidligere eksamensopgaver i Økonometri
+ A, som alle er hentet på siden 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bit.ly/17DofqZ"
+
+\end_inset
+
+.
+ Dette er gjort for at fokusere på de evner, der er nødvendige for at beståe
+ dette fag med gode karakterer.
+ Statistik og sandsynlighedsregning er et overordentlig omfattende felt,
+ så for ikke at drukne i i denne sammenhæng unødvendige informationer, er
+ disse noter møjsommeligt skrevet med henblik på at introducere den studerende
+ til det materiale, der er nødvendigt for at bestå dette fag.
+\end_layout
+
+\begin_layout Standard
+Så vidt muligt har jeg forsøgt at indsætte henvisninger til de formler,
+ der er anvendt i dokumentet her.
+ Dette er typisk sket med et lille, afsluttende underafsnit i hvert afsnit,
+ hvor jeg har nævnt de kilder, jeg har brugt for at skrive det ovenstående
+ afsnit.
+\end_layout
+
+\begin_layout Standard
+Da hovedkilden til disse noter er den engelsksprogede tekstbog 
+\emph on
+Probability and Statistics
+\emph default
+ af 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, har jeg i appendiks 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Gloseliste"
+
+\end_inset
+
+ lavet to gloselister over de ord og begreber, hvis oversættelse mellem
+ dansk og engelsk ikke umiddelbart giver sig selv, som læseren kan konsultere,
+ hvis der er brug for det.
+ Jeg har også flittigt anvendt den danske 
+\emph on
+Statistik i økonomisk perspektiv
+\emph default
+ af 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+ samt 
+\emph on
+Introduktion til sandsynlighedsregning og statistik
+\emph default
+ af 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "olesen2007introduktion"
+
+\end_inset
+
+ for til dels at få nogle hurtigt overskuelige eksempler og formler (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+ kan være lidt for omfattende til tider), til dels at sikre mig, at jeg
+ har anvendt de gængse danske begreber.
+ Der findes derudover en række god læringsressurser på siden med MIT's 
+\emph on
+OpenCourseWare
+\emph default
+ (se 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bit.ly/18OTUK2"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Som strategi for indlæring af materialet kan jeg anbefale programmet 
+\emph on
+Anki
+\emph default
+ (se 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ankisrs.net/"
+
+\end_inset
+
+), hvor man kan generere hukommelseskort (
+\emph on
+flash cards
+\emph default
+) til selv for at teste sin viden efterhånden, som man skrider frem med
+ indlæringen.
+ Derudover kan jeg også anbefale at give sig i kast med af udforme egne
+ noter for at tilegne sig stoffet i bogstaveligste forstand.
+ Når man arbejder med materiale og skriver det ned i ens egne ord, bliver
+ man konfronteret med at skulle forklare og kategorisere mange underliggende
+ sammenhænge og logikker, man ikke nødvendigvis tænker over, hvis man blot
+ læse en tekst.
+ Endelig vil jeg anbefale at studere de gamle eksamensopgaver grundigt,
+ da disse indeholder værdifuld viden om, hvilke evner, der specifikt efterspørge
+s i eksamenssituationen.
+ Rent praktisk kan jeg anbefale programmet LyX, der har det bedste fra MS
+ Word og 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+-baserede programmer.
+\end_layout
+
+\begin_layout Standard
+Ved udarbejdelsen af sådanne noter, ligger der en del overvejelse i, i hvilke
+ rækkefølge de forskellige emner, skal præsenteres.
+ Rækkefølgen i noterne følger primært 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, selvom der kan forekomme variationer.
+ Forelæsningsnoterne introduceret betingede fordelinger sammen med betingede
+ sandsynligheder, hvorimod disse noter har splittet disse emner op, så betingede
+ sandsynligheder først introduceres, og de betingede fordelinger først præsenter
+es i afsnittet om stokastiske variable og fordelinger (kapital 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Stokastiske-variable-og"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Hvis du bliver opmærksom på nogle af de fejl eller mangler, der helt sikkert
+ er i disse noter, eller har spørgsmål, hører jeg mere end gerne fra dig
+ på min mailadresse 
+\begin_inset CommandInset href
+LatexCommand href
+target "mail@avriis.eu"
+type "mailto:"
+
+\end_inset
+
+ eller 
+\begin_inset CommandInset href
+LatexCommand href
+target "zxl634@alumni.ku.dk"
+type "mailto:"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Sandsynlighedsteoretiske begreber
+\end_layout
+
+\begin_layout Standard
+Formålet denne første del er blandt andet at gøre læserne bekendt med de
+ grundlæggende begreber, der anvendes, når man arbejder med statistisk,
+ sandsynlighedsregning og økonometri.
+ 
+\end_layout
+
+\begin_layout Standard
+Fra kursets fagbeskrivelse kan man læse følgende formålsbeskrivelse:
+\end_layout
+
+\begin_layout Quote
+Forstå og benytte de vigtigste sandsynlighedsteoretiske begreber som: sandsynlig
+hed, simultane, marginale og betingede sandsynligheder, fordeling, tæthedsfunkti
+on, uafhængighed, middelværdi, varians og kovarians samt at selvstændigt
+ kunne anvende disse begreber på konkrete problemstillinger.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://kurser.ku.dk/course/a%c3%98kb08019u/2013-2014"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sandsynlighedsregning og statistik
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+after "39-41"
+key "olesen2007introduktion"
+
+\end_inset
+
+ skriver, at der er en forskel mellem sandsynlighedsregning og statistik.
+ Han skriver, at man i statistikken bestemmer 
+\begin_inset Quotes eld
+\end_inset
+
+sandsynlighederne for tilfældige fænomeners forløb
+\begin_inset Quotes erd
+\end_inset
+
+, mens 
+\begin_inset Quotes eld
+\end_inset
+
+sandsynlighedsregningen er en matematisk teori, som ikke nødvendigvis behøver
+ at hente inspiration fra den fysiske virkelighed
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Men hans argument giver ikke mening...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 1.1 fra side 11 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Udfald, udfaldsrum og hændelser
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Udfald,-udfaldsrum-og"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Udfaldsrummet
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+Udfaldsrum
+\end_layout
+
+\end_inset
+
+ (
+\emph on
+sample
+\emph default
+ 
+\emph on
+space
+\emph default
+)
+\emph on
+ 
+\emph default
+er samlingen af samtlige mulige udfald af en hændelse og betegnes, afhængig
+ af kilden, med 
+\begin_inset Formula $S$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "degroot2012probability"
+
+\end_inset
+
+, 
+\begin_inset Formula $U$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "olesen2007introduktion,hansen2012statistik"
+
+\end_inset
+
+ eller 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "junge2012forelaesningsnoter"
+
+\end_inset
+
+.
+ Vi kan eksempelvis forestille os et terningekast, hvor terningen er et
+ kast viser os mellem en og seks øjne.
+ Ved et terningekast er udfaldsrummet defineret som
+\begin_inset Formula 
+\[
+U=\{1,2,3,4,5,6\}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Udfald og hændelser
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Udfald-og-hændelser"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pasted3.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Tallene 1-6 er udfald 
+\begin_inset Formula $u$
+\end_inset
+
+ af et terningekast, mens 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ er hændelser og hele kassen er udfaldsrummet 
+\begin_inset Formula $U$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+Udfald
+\end_layout
+
+\end_inset
+
+ enkelte elementer i udfaldsrummet kaldes for udfald og betegnes med 
+\begin_inset Formula $\omega$
+\end_inset
+
+ (forelæsningsnoterne), 
+\begin_inset Formula $a$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "olesen2007introduktion"
+
+\end_inset
+
+, 
+\begin_inset Formula $u$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hansen2012statistik"
+
+\end_inset
+
+, 
+\begin_inset Formula $m$
+\end_inset
+
+ eller 
+\begin_inset Formula $s$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "degroot2012probability"
+
+\end_inset
+
+.
+ At terningen viser tre øjne er eksempelvis et udfald.
+\end_layout
+
+\begin_layout Standard
+I vintereksamen fra 2012 (re-eksamen) bliver vi præsenteret for tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Salg-af-produkterne"
+
+\end_inset
+
+.
+ Vi får at vide, at profitmarginen på 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ og 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ er henholdsvis kr.
+ 5.000 og kr.
+ 10.000, og at den totale profit derfor er givet ved 
+\begin_inset Formula $Y=5.000X_{1}+10.000X_{2}$
+\end_inset
+
+.
+ Vi bliver nu bedt om at opstille udfaldsrummet af 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ Opgaven løser vi ved at opstille alle de mulige udfald af 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ og 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+, vi kan forestille os.
+ Udfaldene går fra, at vi hverken sælger 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ eller 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+, der giver en samlet profit på nul (
+\bar under
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\bar default
+
+\begin_inset Formula $Y=5.000\times0X_{1}+10.000\times0X_{2}=0$
+\end_inset
+
+), til at vi sælger tre af hver enhed, så vi får en samlet profit på 
+\begin_inset Formula $Y=5.000\times3X_{1}+10.000\times3X_{2}=45.000$
+\end_inset
+
+ kr.
+ Mellem disse to yderpunkter kan vi få udfald med intervallet på 5.000, så
+ udfaldsrummet kan opskrives som i tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Udfaldsrum-af"
+
+\end_inset
+
+ i den første kolonne.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sandsynligheder for salg af produkterne 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ og 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Salg-af-produkterne"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{1}$
+\end_inset
+
+/
+\begin_inset Formula $X_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,18
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,08
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,04
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Udfaldsrum af 
+\begin_inset Formula $Y$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Udfaldsrum-af"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(y)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,02
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,02
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,06
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,14
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,14
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,22
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+35.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,12
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,08
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45.000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,04
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+Hændelser
+\end_layout
+
+\end_inset
+
+ kan også forestille også en samling af udfald med betegnelsen 
+\begin_inset Formula $A$
+\end_inset
+
+ eller 
+\begin_inset Formula $E$
+\end_inset
+
+, der i modsætning til udfaldsrummet 
+\begin_inset Formula $U$
+\end_inset
+
+ enten kan indeholde alle udfald eller en delmængde af udfaldsrummet, hvorfor
+ vi kan skrive 
+\begin_inset Formula $A\subseteq U$
+\end_inset
+
+ (
+\begin_inset Formula $A$
+\end_inset
+
+ er en delmængde af 
+\begin_inset Formula $U$
+\end_inset
+
+, eller A er indeholdt i 
+\begin_inset Formula $U$
+\end_inset
+
+).
+ Vi kalder sådanne delmængder af 
+\begin_inset Formula $U$
+\end_inset
+
+ for hændelser.
+ I eksemplet med terningekastet kunne vi forestille os, at vi har en hændelse
+ 
+\begin_inset Formula $B$
+\end_inset
+
+, der beskriver de udfald, hvor terningen viser et lige antal øjne,
+\begin_inset Formula 
+\begin{equation}
+B=\{2,4,6\}.\label{eq:B}
+\end{equation}
+
+\end_inset
+
+ Figur 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Udfald-og-hændelser"
+
+\end_inset
+
+ illustrerer eksperimentet med terningekastet, hvor hele kassen er udfaldsrummet
+ 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ De to cirkler symboliserer de to hændelser 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+, hvor 
+\begin_inset Formula $B$
+\end_inset
+
+ er defineret som i ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:B"
+
+\end_inset
+
+ og 
+\begin_inset Formula $A=\{1,4,5\}.$
+\end_inset
+
+ Tallene 1-6 er udfald 
+\begin_inset Formula $u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Man
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+Eksperimenter
+\end_layout
+
+\end_inset
+
+ taler om eksperimenter indenfor sandsynlighedsregningen.
+ Et kast med en terning er et eksperiment.
+ En anden form for eksperiment kan være en udvægelse af nogle personer i
+ en gruppe.
+\end_layout
+
+\begin_layout Section
+Hændelsesalgebra
+\end_layout
+
+\begin_layout Standard
+Vi taler ofte om komplementærhændelser, der er defineret som den hændelse,
+ at en given hændelse ikke sker.
+ Komplementærhændelsen af 
+\begin_inset Formula $A$
+\end_inset
+
+ er således, at 
+\begin_inset Formula $A$
+\end_inset
+
+ ikke indtræffer.
+ Komplementærhændelsen betegnes som 
+\begin_inset Formula $A^{c}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "degroot2012probability"
+
+\end_inset
+
+, 
+\begin_inset Formula $\overline{A}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hansen2012statistik"
+
+\end_inset
+
+, 
+\begin_inset Formula $CA$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "olesen2007introduktion"
+
+\end_inset
+
+ og 
+\begin_inset Formula $A^{C}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "menzel20091430introduction"
+
+\end_inset
+
+.
+ Det kan være nyttigt at notere sig, at 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $A^{c}$
+\end_inset
+
+ er disjunkte hændelser.
+ I vores eksempelvis med terningekastet er komplementærhændelse af givet
+ med
+\begin_inset Formula 
+\[
+A^{c}=\{2,3,6\}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi taler fælleshændelsen eller fællesmængden (
+\emph on
+intersection
+\emph default
+) mellem 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\series bold
+
+\begin_inset Formula $B$
+\end_inset
+
+
+\series default
+, når vi kun betegner de udfald 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ har til fælles.
+ Fælleshændelsen inkluderer altså de udfald, der både er til stede i 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Fælleshændelsen er defineret som
+\begin_inset Formula 
+\[
+A\cap B,
+\]
+
+\end_inset
+
+ og betegner de udfald, der både findes i hændelserne 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Hvis vi vender tilbage til vores tidligere eksempel med terningekastet,
+ kan vi i figur 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Udfald-og-hændelser"
+
+\end_inset
+
+ se, at fælleshændelsen 
+\begin_inset Formula $A\cap B=4$
+\end_inset
+
+.
+ Udfaldet, at terningen viser fire øjne, er det eneste udfald, der både
+ er indeholdt i 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Når vi taler om udfald, der enten er til stede i 
+\begin_inset Formula $A$
+\end_inset
+
+ eller 
+\series bold
+
+\begin_inset Formula $B$
+\end_inset
+
+
+\series default
+, har vi med foreningshændelsen eller foreningsmængden (
+\emph on
+union
+\emph default
+) at
+\emph on
+ 
+\emph default
+gøre.
+ En foreningshændelse er defineret som
+\begin_inset Formula 
+\[
+A\cup B.
+\]
+
+\end_inset
+
+ Den betegner de udfald, der enten ligger i 
+\begin_inset Formula $A$
+\end_inset
+
+ eller 
+\series bold
+
+\begin_inset Formula $B$
+\end_inset
+
+
+\series default
+.
+ Foreningshændelsen af 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\series bold
+
+\begin_inset Formula $B$
+\end_inset
+
+
+\series default
+ i eksemplet med terningekastet er 
+\begin_inset Formula $A\cup B=\{1,2,4,5,6\}$
+\end_inset
+
+, dvs.
+ at foreningshændelsen indeholder alle de udfald, der enten er i 
+\begin_inset Formula $A$
+\end_inset
+
+ eller 
+\series bold
+
+\begin_inset Formula $B$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Foreningshændelsen af en hændelse og dens komplementærhændelse er lig udfaldsrum
+met,
+\begin_inset Formula 
+\[
+A\cup A^{c}=U.
+\]
+
+\end_inset
+
+ Dette resultat giver god mening, hvis man tænker på, at hele udfaldsrummet
+ består af enten af de hændelser, der i 
+\begin_inset Formula $A$
+\end_inset
+
+ eller de hændelser, der ikke er i 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Når hændelserne 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\series bold
+
+\begin_inset Formula $B$
+\end_inset
+
+ 
+\series default
+ikke har nogle udfald til fælles, er de to hændelser disjunkte hændelser.
+ I så fald har vi
+\begin_inset Formula 
+\[
+A\cap B=\emptyset.
+\]
+
+\end_inset
+
+ Fællesmængden af 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ er således en umulig hændelse eller et tomt sæt; de har ikke nogle udfald
+ til fælles.
+\end_layout
+
+\begin_layout Standard
+De forskellige typer af hændelser er illustreret i figur 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Venn-diagrammer"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Venn-diagrammer
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Venn-diagrammer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Venn.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size footnotesize
+Kilde: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bit.ly/18vr79G"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi oplever også nogle gange, at en hændelse er indeholdt i en anden hændelse,
+ hvilket vi skriver som 
+\begin_inset Formula $A\subset B$
+\end_inset
+
+.
+ En hændelse 
+\begin_inset Formula $A$
+\end_inset
+
+ kun indeholdt i en anden 
+\begin_inset Formula $B$
+\end_inset
+
+, hvis og kun hvis alle udfaldene i 
+\begin_inset Formula $A$
+\end_inset
+
+ også er i 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $u\in A\Rightarrow u\in B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+De to hændelser 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ er ens, hvis og kun hvis 
+\begin_inset Formula $A$
+\end_inset
+
+ er indeholdt i 
+\begin_inset Formula $B$
+\end_inset
+
+ (
+\begin_inset Formula $A\subset B$
+\end_inset
+
+) og 
+\begin_inset Formula $B$
+\end_inset
+
+ er indeholdt i 
+\begin_inset Formula $A$
+\end_inset
+
+ (
+\begin_inset Formula $B\subset A$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+Sandsynligheder for udfald og hændelser
+\end_layout
+
+\begin_layout Standard
+Til ethvert udfald 
+\begin_inset Formula $u$
+\end_inset
+
+ kan vi knytte en sandsynlighed med en sandsynlighedsfunktion.
+ Vi kan eksempelvis være interesserede i, hvad sandsynligheden er for, at
+ terningen viser fire øjne.
+ En sandsynlighedsfunktion 
+\begin_inset Formula $Pr$
+\end_inset
+
+ på 
+\begin_inset Formula $U$
+\end_inset
+
+ er givet ved 
+\begin_inset Formula $Pr:U\to[0,1]$
+\end_inset
+
+, hvor 
+\begin_inset Formula $U$
+\end_inset
+
+ er en endelig mængde og 
+\begin_inset Formula $\Pr(U)=1$
+\end_inset
+
+.
+ Sandsynligheden for at udfaldsrummet hænder er perfekt, per definition.
+ En sandsynlighedsfunktion er kendetegnet ved 
+\begin_inset Formula 
+\begin{equation}
+0\leq\Pr(u)\leq1
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+og
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sum_{u\in U}\Pr(u)=1,\label{eq:Pr(U)}
+\end{equation}
+
+\end_inset
+
+dvs.
+ at sandsynligheden for et givent udfald er mellem 0 og 1, og at sandsynligheden
+ for, at summen af sandsynligheden for, at samtlige udfald i udfaldsrummet
+ udfaldsrummet hænder er 1.
+\end_layout
+
+\begin_layout Standard
+Parret 
+\begin_inset Formula $(U,Pr)$
+\end_inset
+
+ kaldes et (endeligt) sandsynlighedsfelt.
+ Vi har allerede introduceret begge størrelser, så det vil ikke komme som
+ en overraske, at sådan et sandsynlighedsfelt 
+\begin_inset Formula $(U,P)$
+\end_inset
+
+ består af et udfaldsrum 
+\begin_inset Formula $U$
+\end_inset
+
+ med en samling sandsynligheder 
+\begin_inset Formula $Pr$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Som vi ved fra tidligere, er en hændelse 
+\begin_inset Formula $A$
+\end_inset
+
+ en samling af udfald 
+\begin_inset Formula $u$
+\end_inset
+
+.
+ Sandsynligheden for sådan en hændelse 
+\begin_inset Formula $A$
+\end_inset
+
+ er defineret ved 
+\begin_inset Formula 
+\begin{equation}
+\Pr(A)=\sum_{u\in A}\Pr(u),\label{eq:Pr_haendelse}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+dvs.
+ at summen af sandsynligheden for de enkelte elementer (udfald) i 
+\begin_inset Formula $A$
+\end_inset
+
+ er lig med sandsynligheden for hændelsen 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Til enhver hændelse 
+\begin_inset Formula $A$
+\end_inset
+
+ i udfaldsrummet 
+\begin_inset Formula $U$
+\end_inset
+
+ knytter der sig ligeledes en sandsynlighed, der angiver, hvor stor sandsynlighe
+den er for, at den givne hændelse indtræffer.
+ Sandsynligheden for 
+\begin_inset Formula $A$
+\end_inset
+
+ må nødvendigvis være større end nul, så vi skriver
+\begin_inset Formula 
+\begin{equation}
+\Pr(A)\geq0.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Derudover ved vi, at sandsynligheden for at et eller andet i udfaldsrummet
+ rent faktisk sker er sikker (bemærk ligheden med ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:Pr(U)"
+
+\end_inset
+
+), så vi kan også skrive
+\begin_inset Formula 
+\begin{equation}
+\Pr(U)=1.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis en begivenhed 
+\begin_inset Formula $A$
+\end_inset
+
+ indeholder 
+\begin_inset Formula $m$
+\end_inset
+
+ udfald som er lige sandsynlige, så er sandsynligheden for 
+\begin_inset Formula $A$
+\end_inset
+
+ givet ved 
+\begin_inset Formula 
+\begin{equation}
+\Pr(A)=\frac{m}{n},
+\end{equation}
+
+\end_inset
+
+ hvor 
+\begin_inset Formula $n$
+\end_inset
+
+ er det samlede antal af mulige udfald i udfaldsrummet 
+\begin_inset Formula $U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En tilfældig (stokastisk) variabel er en funktion bestående af rationelle
+ tal i et givent udfaldsrum.
+ Disse tilfældige variabler anvendes til at modellere ukendte mængder i
+ statistiske analyser.
+ For hver stokastisk variabel 
+\begin_inset Formula $X$
+\end_inset
+
+ og hver sæt af reelle tal 
+\begin_inset Formula $C$
+\end_inset
+
+, kan vi udregne sandsynligheden for, at den stokastiske variabel tager
+ sin værdi fra 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ Samlingen af disse sandsynligheder er fordelingen af 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Disse fordelinger kan være diskrete eller kontinuerte.
+\end_layout
+
+\begin_layout Standard
+Sandsynligheden for komplementærhændelsen af hændelsen 
+\begin_inset Formula $A$
+\end_inset
+
+ er givet ved
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pr(A^{c})=1-\Pr(A).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For at finde sandsynligheden for en fælleshændelse ganger vi sandsynligheden
+ for de to hændelser med hinanden, 
+\begin_inset Formula 
+\begin{equation}
+\Pr(A\cap B)=\Pr(A)\Pr(B).\label{eq:Pr_intersection}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis eksempelvis 
+\begin_inset Formula $\Pr(A)=\Pr(B)=1/52$
+\end_inset
+
+ (sandsynligheden for at trække et bestemt kort i et spil kort), har vi
+ 
+\begin_inset Formula $\Pr(A\cap B)=1/52\times1/52=1/2704$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sandsynligheden for en foreningshændelse er 
+\begin_inset Formula 
+\[
+\Pr(A\cup B)=\Pr(A)+\Pr(B)-\Pr(A\cap B).
+\]
+
+\end_inset
+
+ Intuitionen bag er at sandsynligheden for foreningshændelsen 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+ er sandsynligheden for de enkelte hændelser 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ minus fælleshændelsen 
+\begin_inset Formula $A\cap B$
+\end_inset
+
+, så vi ikke tæller de udfald, der er til stede i både 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ med to gange.
+\end_layout
+
+\begin_layout Standard
+Hvis de to hændelser 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\series bold
+
+\begin_inset Formula $B$
+\end_inset
+
+
+\series default
+ er diskunkte, 
+\begin_inset Formula $A\cap B=\emptyset$
+\end_inset
+
+, dvs.
+ de har ikke nogle udfald til fælles, kan vi finde sandsynligheden for en
+ foreningshændelse ved at plusse de to hændelser med hinanden, dvs.
+\begin_inset Formula 
+\[
+\Pr(A\cup B)=\Pr(A)+\Pr(B).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mere generelt kan vi sige, at sandsynligheden for en række disjunkte hændelser
+ blot er summen af de individuelle hændelser, nemlig
+\begin_inset Formula 
+\begin{equation}
+\Pr\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}\Pr(A_{i}).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisning
+\end_layout
+
+\begin_layout Standard
+Se afsnit 1.5 fra side 16 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+ afsnit 3.2 fra side 45 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+ samt afsnit 2.1 fra side 41 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "olesen2007introduktion"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Betingede sandsynligheder
+\end_layout
+
+\begin_layout Standard
+I dette afsnit ser vi på sandsynligheder af en hændelse, givet at en anden
+ hændelse allerede er indtruffet.
+ Denne betingede sandsynlighed er defineret ved
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pr(A|B)=\frac{\Pr(A\cap B)}{\Pr(B)}.\label{eq:betinget_sandsynlighed}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sandsynligheden for 
+\begin_inset Formula $A$
+\end_inset
+
+ givet 
+\begin_inset Formula $B$
+\end_inset
+
+ er således givet ved forholdet mellem sandsynligheden for fælleshændelsen
+ 
+\begin_inset Formula $A\cap B$
+\end_inset
+
+ og sandsynligheden for 
+\begin_inset Formula $B$
+\end_inset
+
+; jo større sandsynligheden for 
+\begin_inset Formula $B$
+\end_inset
+
+, jo mindre er sandsynligheden for 
+\begin_inset Formula $A$
+\end_inset
+
+ givet 
+\begin_inset Formula $B$
+\end_inset
+
+, eller ligeledes, jo større sandsynligheden er for fælleshændelsen 
+\begin_inset Formula $A\cap B$
+\end_inset
+
+, jo større er sandsynlighden for hændelsen 
+\begin_inset Formula $A$
+\end_inset
+
+ givet 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fra ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:betinget_sandsynlighed"
+
+\end_inset
+
+ kan vi blandt andet udlede multiplikationsreglerne,
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+Multiplikationsreglerne
+\begin_inset Newline newline
+\end_inset
+
+for betingede
+\begin_inset Newline newline
+\end_inset
+
+sandsynligheder
+\end_layout
+
+\end_inset
+
+ der fortæller os, at
+\begin_inset Formula 
+\[
+\Pr(A\cap B)=\Pr(B)\Pr(A|B)=\Pr(A)\Pr(B|A),
+\]
+
+\end_inset
+
+ og
+\begin_inset Formula 
+\[
+\Pr(A_{1}\cap\dots\cap A_{k})=\Pr(A_{1})\Pr(A_{2}|A_{1})\dots\Pr(A_{k}|A_{1}\cap\dots\cap A_{k}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi har også, at
+\begin_inset Formula 
+\[
+\Pr(A^{c}|B)=1-\Pr(A|\text{B),}
+\]
+
+\end_inset
+
+hvis 
+\begin_inset Formula $\Pr(B)>0$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se 
+\begin_inset CommandInset citation
+LatexCommand citet
+after "59"
+key "degroot2012probability"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En vigtig ligning er loven om den totale sandsynligheder,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size normal
+\emph on
+Law of total probability: 
+\size default
+\emph default
+Teorem 2.1.4 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, side 60.
+\end_layout
+
+\end_inset
+
+ der er givet ved
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+Loven om den totale 
+\begin_inset Newline newline
+\end_inset
+
+sandsynlighed
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+\Pr(A)=\sum_{j=1}^{k}\Pr(B_{j})\Pr(A|B_{j}).\label{eq:law_of_total_prob}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi anvender loven om den total sandsynlighed, når vi fx har to eller flere
+ grupper, og vi skal udregne sandsynlighederne for en given variabel, givet
+ en af de to grupper.
+\end_layout
+
+\begin_layout Standard
+Antag eksempelvis, 1) at vi har 1200 pendlere, hvoraf 800 tager bilen på
+ arbejde, mens resten foretrækker cyklen, 2) at halvdelen af pendlerne er
+ mænd, og 3) at sandsynligheden for at køre bil, givet at pendleren er mand,
+ er 0,6.
+ Den tilsvarende sandsynlighed, givet at pendleren er kvinde, er 0,2.
+ Vi skal nu finde ud af, hvad sandsynligheden er, for at en pendler er en
+ mand, givet at der cykles til arbejde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+PMcykel <- (0.4*0.5)/0.6
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Først finder vi sandsynligheden for, at pendleren cykler til arbejde, hvilket
+ er givet ved 
+\begin_inset Formula $P(\text{cykel})=1-P(\text{bil})$
+\end_inset
+
+, da pendleren enten cykler eller kører i bil til arbejde.
+ Vi ser, at vi behøver sandsynligheden for at køre bil.
+ Sandsynligheden for at køre bil kan vi udregne ved hjælp af loven om total
+ sandsynlighed (ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:law_of_total_prob"
+
+\end_inset
+
+), hvor 
+\begin_inset Formula $\Pr(A)$
+\end_inset
+
+ i vores eksempel er sandsynlighden for at køre bil, 
+\begin_inset Formula $\Pr(B_{j})$
+\end_inset
+
+ er sandsynligheden for at være mand henholdsvis kvinde, mens 
+\begin_inset Formula $\Pr(A|B_{j})$
+\end_inset
+
+ er sandsynligheden for at køre bil givet ens køn.
+ Værdierne for 
+\begin_inset Formula $\Pr(A|B_{j})$
+\end_inset
+
+ har vi fået givet (se ovenfor), således at 
+\begin_inset Formula $\Pr(A|B_{\text{mand}})=\Pr(\text{bil}|\text{mand})=0,6$
+\end_inset
+
+ og 
+\begin_inset Formula $\Pr(A|B_{\text{kvinde}})=0,2$
+\end_inset
+
+.
+ Sandsynligheden for at køre bil er derfor 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula 
+\[
+P(\text{bil})=0,6\times0,5+0,2\times0,5=0,4.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nu kan vi udregne sandsynligheden for, at tage cyklen (uanset køn) som 
+\begin_inset Formula 
+\[
+P(\text{cykel})=1-P(\text{bil})=1-0,4=0,6.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi anvender nu Bayes' formel,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Teorem 2.3.1 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, side 77.
+\end_layout
+
+\end_inset
+
+ der fortæller os at
+\begin_inset Formula 
+\begin{equation}
+\Pr(B_{i}|A)=\frac{\Pr(B_{i})\Pr(A|B)}{\sum_{j=1}^{k}\Pr(B_{j})\Pr(A|B_{j})},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hvilket ved hjælp af loven om total sandsynlighed (ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:law_of_total_prob"
+
+\end_inset
+
+) kan reduceres til 
+\begin_inset Formula 
+\[
+\Pr(B_{i}|A)=\frac{\Pr(B_{i})\Pr(A|B)}{\Pr(A)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bayes' sætning kan alternativt skrives som
+\begin_inset Formula 
+\[
+\Pr(A|B)=\frac{\Pr(A)\Pr(B|A)}{\Pr(A)\Pr(B|A)+\Pr(A^{c})\Pr(B|A^{c})},
+\]
+
+\end_inset
+
+ da
+\begin_inset Formula 
+\begin{eqnarray*}
+\Pr(B) & = & \Pr(B\cap A)+\Pr(B\cap A^{c})\\
+ & = & \Pr(A)\Pr(B|A)+\Pr(A^{c})\Pr(B|A{}^{c}).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi kan derfor nu sige, at
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(M|\text{cykel})=\frac{P(M)P(\text{cykel}|M)}{P(\text{cykel})}=\frac{0,5\times0,4}{0,6}=\frac{1}{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Er 
+\begin_inset Formula $\Pr(A|B)=1-\Pr(A^{c}|B)?$
+\end_inset
+
+ Hvis ikke, kan jeg ikke forklare, hvor udtrykket 
+\begin_inset Formula $P(\text{cykel}|M)=0,4$
+\end_inset
+
+ kommer fra...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Et andet eksempel er en undersøgelse af, om studerende er færdige på normeret
+ tid.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Vintereksamen 2012-13, ordinær eksamen, spørgsmål 1.
+\end_layout
+
+\end_inset
+
+ Vi får at vide, at universitetet deler sine studerende op i to grupper,
+ nemlig 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+, og at sandsynligheden for at bestå til normeret tid, givet vi har en type
+ 
+\begin_inset Formula $A$
+\end_inset
+
+-studerende er 
+\begin_inset Formula $\Pr(E|A)=0,26$
+\end_inset
+
+ og den tilsvarende sandsynlighed for en type 
+\begin_inset Formula $B$
+\end_inset
+
+-studerende er givet ved 
+\begin_inset Formula $\Pr(E|B)=0,38,$
+\end_inset
+
+ hvor 
+\begin_inset Formula $E$
+\end_inset
+
+ er en stokatisk variable, der angiver, om en studerende er færdig på normeret
+ tid.
+ Vi bliver nu bedt om at udregne, hvor stor en andel studerende, der er
+ type 
+\begin_inset Formula $A$
+\end_inset
+
+, dvs.
+ 
+\begin_inset Formula $\Pr(A)$
+\end_inset
+
+, hvor 
+\begin_inset Formula $\Pr(E)=0,34$
+\end_inset
+
+ (35% består til normeret tid).
+\end_layout
+
+\begin_layout Standard
+For at læse denne opgave kan vi bruge loven om den total sandsynlighed fra
+ ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:law_of_total_prob"
+
+\end_inset
+
+.
+ Vi skriver
+\begin_inset Formula 
+\[
+\Pr(E)=\Pr(A)\Pr(E|A)+\Pr(B)\Pr(E|B).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da vi kun har to grupper af studerende har vi, at 
+\begin_inset Formula $\Pr(A)+\Pr(B)=1\Leftrightarrow\Pr(B)=1-\Pr(A),$
+\end_inset
+
+ hvorfor vi kan fortsætte til at skrive
+\begin_inset Formula 
+\begin{eqnarray*}
+\Pr(E) & = & \Pr(A)\Pr(E|A)+(1-\Pr(A))\Pr(E|B)\\
+0,34 & = & \Pr(A)0,26+(1-\Pr(A))0,38\\
+0,34-0,38 & = & \Pr(A)0,26-\Pr(A)0,38\\
+\frac{0,34-0,38}{0,26-0,38} & = & \Pr(A)\\
+\frac{-0,04}{-0,12} & = & \Pr(A)\\
+\frac{1}{3} & = & \Pr(A).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\Pr(A_{1}\cap A_{2}\cap\cdots\cap A_{n}|B) & = & \Pr(A_{1}|B)\Pr(A_{2}|A_{1}\cap B)\cdots\\
+ &  & \times\Pr(A_{n}|A_{1}\cap A_{2}\cap\cdots\cap A_{n-1}\cap B).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis vi betinger på en yderligere hændelse 
+\begin_inset Formula $C$
+\end_inset
+
+ har vi følgende sammenhæng,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pr(A|C)=\sum_{j=1}^{k}\Pr(B_{j}|C)\Pr(A|B_{j}\cap C).\label{eq:loven_om_den_totale_sandsynlighed_cond}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 2.1 fra side 55 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, afsnit 3.3 fra side 49 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+ samt fra side 71 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "olesen2007introduktion"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Uafhængighed
+\end_layout
+
+\begin_layout Standard
+Vi definerer uafhængighed som det fænomen, at sandsynligheden for hændelse
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ ikke ændrer sig, hvis vi ved at en anden hændelse 
+\begin_inset Formula $B$
+\end_inset
+
+ også indtræffer.
+ Hændelsen 
+\begin_inset Formula $A$
+\end_inset
+
+ er således uafhængig af 
+\begin_inset Formula $B$
+\end_inset
+
+ hvis
+\begin_inset Formula 
+\begin{equation}
+\Pr(A|B)=\Pr(B).\label{eq:indep.}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alternativt kan vi skrive, at 
+\begin_inset Formula 
+\[
+\Pr(A\cap B)=\Pr(A)\Pr(B).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I vores indledende eksempler med et terningekast er de to hændelser 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $A=\{1,4,5\}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang danish
+ og 
+\series bold
+
+\begin_inset Formula $B=\{2,4,6\}$
+\end_inset
+
+
+\series default
+ (se figur 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Udfald-og-hændelser"
+
+\end_inset
+
+ for en illustration af eksemplet) uafhængige af hinanden, fordi sandsynligheden
+ for 
+\begin_inset Formula $A$
+\end_inset
+
+ henholdsvis 
+\begin_inset Formula $B$
+\end_inset
+
+ ikke ændrer sig, hvis den anden hændelse allerede er indtruffet.
+ Først lad os dog antage, at vi ønsker at udregne sandsynligheden for 
+\begin_inset Formula $A$
+\end_inset
+
+, givet at 
+\begin_inset Formula $B$
+\end_inset
+
+ allerede er indtruffet med ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:betinget_sandsynlighed"
+
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\Pr(A|B)=\frac{\Pr(A\cap B)}{\Pr(B)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sandsynligheden for fælleshændelsen af 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ finder vi ved hjælp af ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:Pr_intersection"
+
+\end_inset
+
+, der siger, at sandsynligheden for fælleshændelsen af 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ er givet ved produktet af sandsynligheden for 
+\begin_inset Formula $A$
+\end_inset
+
+ henholdsvis 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\Pr(A\cap B)=\Pr(A)\Pr(B)=\frac{1}{2}\times\frac{1}{2}=\frac{1}{4}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sandsynligheden for 
+\begin_inset Formula $B$
+\end_inset
+
+ er summen af sandsynlighederne for de udfald, der findes i 
+\begin_inset Formula $B$
+\end_inset
+
+, så med ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:Pr_haendelse"
+
+\end_inset
+
+ har vi
+\begin_inset Formula 
+\[
+\Pr(B)=\Pr(u_{2})+\Pr(u_{4})+\Pr(u_{6})=3/6=1/2.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi har derfor nu
+\begin_inset Formula 
+\[
+\Pr(A|B)=\frac{1/4}{1/2}=2/4=1/2=\Pr(B),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hvilket bekræfter vores definition af uafhængighed i ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:indep."
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vi kan også tale om uafhængighed ved større samlinger af hændelser som i
+ generel form er givet ved
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pr(A_{i_{1}}\cap\cdots\cap A_{i_{m}}|A_{j_{1}}\cap\cdots\cap A_{j_{l}})=\Pr(A_{i_{1}}\cap\cdots\cap A_{i_{m}}),\label{eq:indep_several}
+\end{equation}
+
+\end_inset
+
+ hvor 
+\begin_inset Formula $\{i_{1},\dots,i_{m}\}$
+\end_inset
+
+ og 
+\begin_inset Formula $\{j_{1},\dots,j_{l}\}$
+\end_inset
+
+ er to diskjunkte delsæt.
+\end_layout
+
+\begin_layout Standard
+De to hændelser 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ og 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+ er betingede uafhængige givet 
+\begin_inset Formula $B$
+\end_inset
+
+, hvis 
+\begin_inset Formula 
+\begin{equation}
+\Pr(A_{2}|A_{1}\cap B)=\Pr(A_{2}|B).\label{eq:conditionally_indep}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I vores eksempel med sandsynlighederne for at gennemføre på normeret tid,
+ bliver vi præsenteret for tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Studietid"
+
+\end_inset
+
+, der viser simultanfordelingen af type af studerende (
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+) samt studieretningen 
+\begin_inset Formula $(X=C_{X}$
+\end_inset
+
+, 
+\begin_inset Formula $Y=C_{Y}$
+\end_inset
+
+ eller 
+\begin_inset Formula $Z=C_{Z}$
+\end_inset
+
+).
+ Derudover får vi at vide, at sandsynligheden for at bestå til normeret
+ tid er uafhængig af studieretningen, når der betinges på type af studerende.
+ Ved at anvende ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:conditionally_indep"
+
+\end_inset
+
+, kan vi altså eksempelvis skrive
+\begin_inset Formula 
+\begin{equation}
+\Pr(E|X\cap A)=\Pr(E|A).\label{eq:betinget_uafhængighed}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Studietid
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Studietid"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(%)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Studieretning
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+34
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Jeg forstår ikke notationen: Er 
+\begin_inset Formula $\Pr(E|A,j)=\Pr(E|A\cap j)$
+\end_inset
+
+, og hvis ja, hvilken ligning kan jeg anvende til at forklare det? De er
+ ens, og jeg fandt teorem 2.2.4 på side 73 i DeGroot og Schervish til at forklare
+ det.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+a <- (12/35)*0.26+(23/35)*.38
+\end_layout
+
+\begin_layout Plain Layout
+
+b <- format(a,decimal.mark=",", digits=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Med vores nye viden om uafhængighed springer vi nu tilbage til et delspørgsmål
+ af det samme eksempel om sandsynligheden for at bestå på normeret, hvor
+ vi skal anvende loven om total sandsynlighed.
+ Vi bliver bedt om at udregne hvad sandsynlighederne er for at bestå på
+ normeret tid givet de forskellige studieretninger 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $Y$
+\end_inset
+
+ og 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ Til det formål anvender vi ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:loven_om_den_totale_sandsynlighed_cond"
+
+\end_inset
+
+, nemlig den betingede udgave af loven om total sandsynlighed.
+ Først finder vi sandsynligheden for at bestå på normeret tid givet, at
+ den studerende går på studieretning 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula 
+\begin{eqnarray}
+\Pr(E|X) & = & \Pr(A|X)\Pr(E|A\cap X)+\Pr(B|X)\Pr(E|B\cap X)\label{eq:v12opg1.2}\\
+ & = & \frac{12}{35}\times0,26+\frac{23}{35}\times0,38=\Sexpr{b}.\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+Sandsynligheden for at være en type 
+\begin_inset Formula $A$
+\end_inset
+
+ studerende givet studieretning finder vi ved hjælp af ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:betinget_sandsynlighed"
+
+\end_inset
+
+ om den betingede sandsynlighed,
+\begin_inset Formula 
+\[
+\Pr(A|X)=\frac{\Pr(A\cap X)}{\Pr(X)},
+\]
+
+\end_inset
+
+ hvilket vi læser ud af tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Studietid"
+
+\end_inset
+
+.
+ Da vi har fået at vide, at sandsynligheden for at bestå til tiden er uafhængig
+ af studieretningen, givet typen af studerende, har vi, at 
+\begin_inset Formula $\Pr(E|A\cap X)=\Pr(E|A)$
+\end_inset
+
+ via ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:betinget_uafhængighed"
+
+\end_inset
+
+.
+ Opgaven giver os informationen om, at sandsynligheden for at bestå til
+ normeret tid, givet at vi har en type 
+\begin_inset Formula $A$
+\end_inset
+
+-studerende er 0,26.
+ Samme procedure er anvendt for at finde anden del af resultatet i ligning
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:v12opg1.2"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 2.2 fra side 66 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, definition 3.20 på side 54 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Kombinatorik
+\end_layout
+
+\begin_layout Standard
+Vi taler om 
+\emph on
+permutationer
+\emph default
+, hvis rækkefølgen betyder noget, og 
+\emph on
+kombinationer
+\emph default
+, når rækkefølgen ikke betyder noget.
+ Antallet er permutationer, dvs.
+ antallet af forskellige måder hvorpå vi kan arrangere 
+\begin_inset Formula $n$
+\end_inset
+
+ forskellige ting, er givet ved
+\begin_inset Formula 
+\[
+n!,
+\]
+
+\end_inset
+
+ der siges som 
+\begin_inset Formula $n$
+\end_inset
+
+ fakultet eller 
+\begin_inset Formula $n$
+\end_inset
+
+ udråbstegn.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\binom{N}{n}=\text{\frac{N!}{n!(N-n)!}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi kan bruge kombinatorik, når vi eksempelvis skal kigge på stikprøver,
+ hvor stikprøvestørrelsen kan betegnes 
+\begin_inset Formula $n$
+\end_inset
+
+ og populationen som 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ Med tilbagelægning har vi 
+\begin_inset Formula $N^{n}$
+\end_inset
+
+ antal mulige stikprøver, der alle er lige sandsynlige, mens vi uden tilbagelæsn
+ing har 
+\begin_inset Formula $\binom{N}{n}$
+\end_inset
+
+ antal mulige stikprøver, der igen alle er lige sandsynlige.
+ Jo større forholdet er mellem 
+\begin_inset Formula $n$
+\end_inset
+
+ og 
+\begin_inset Formula $N$
+\end_inset
+
+, jo større forskel er der mellem størrelserne 
+\begin_inset Formula $N^{n}$
+\end_inset
+
+ og 
+\begin_inset Formula $\binom{N}{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Stokastiske variable og fordelinger
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Stokastiske-variable-og"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Med 
+\begin_inset CommandInset citation
+LatexCommand citet
+after "66"
+key "hansen2012statistik"
+
+\end_inset
+
+ kan vi definere en stokastisk variabel 
+\begin_inset Formula $X$
+\end_inset
+
+ som en funktion, der til hvert udfald 
+\begin_inset Formula $u$
+\end_inset
+
+ knytter et tal.
+ Variablen 
+\begin_inset Formula $X$
+\end_inset
+
+ kan eksempelvis være antallet af enere i et terningekast, således at vi
+ knytter værdien 1 til det udfald, at terningen viser 1 øje, og værdien
+ 0 til alle andre udfald.
+ En stokastisk variabel fortæller os noget om udfaldene af et givent eksperiment
+ eller fænomen, som vi observerer.
+\end_layout
+
+\begin_layout Standard
+Forholdet mellem hændelser, som vi har set på i afsnit 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Udfald,-udfaldsrum-og"
+
+\end_inset
+
+, og stokastiske variable er, at en hændelse er en samling eller et sæt
+ af udfald, mens en stokastisk variabel er en funktion af ethvert udfald,
+ dvs.
+ 
+\begin_inset Formula $X(u)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Udtrykket 
+\begin_inset Formula $X=x$
+\end_inset
+
+ svarer til hændelsen bestående af alle udfald 
+\begin_inset Formula $u$
+\end_inset
+
+, hvor ...
+ forstår det ikke, se forelæsningsnoter 3, side 3..
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der er forskellige måder at kategorisere variable på, da forskellige typer
+ af variable har forskellige kendetegn, der bevirker, at man skal anvende
+ forskellige statistiske metoder på dem.
+ Tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Typer-af-variable"
+
+\end_inset
+
+ viser en skematisk oversigt over de forskellige typer og kategorier af
+ variable.
+ Den vigtigste forskel statistisk set er om variablene er kontinuerte eller
+ diskrete.
+ En variabel er diskret, hvis den kun kan antage et endeligt og tælleligt
+ antal værdier, såsom antallet af øjne ved et terningekast.
+ En kontinuert variabel er en variabel, der kan antage alle mulige værdier
+ i et interval.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Variable
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kontinuerte
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diskrete
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kvantitative
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Afkast af en investering
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Antal øjne i et terningekast
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kvalitative
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ikke-rangordnet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Antal lige øjne i et terningekast
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rangordnet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uddannelsesniveau
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Typer af variable
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Typer-af-variable"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fordelinger er samlinger af hændelsers sandsynligheder, der er bestemt af
+ stokastiske variable 
+\begin_inset CommandInset citation
+LatexCommand citep
+after "141"
+key "degroot2012probability"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Inden vi kigger på måder, hvormed man kan beskrive stokastiske variable,
+ ser vi først på marginale sandsynligheder
+\end_layout
+
+\begin_layout Section
+Sandsynligheds-, tætheds- og fordelingsfunktion
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sandsynligheds-,-tætheds--og"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis en stokastisk variabel har en diskret fordeling, er dens sandsynlighedsfunk
+tion (
+\emph on
+probability function
+\emph default
+, 
+\emph on
+p.f.
+\emph default
+) defineret ved
+\begin_inset Formula 
+\begin{equation}
+f(x)=\Pr(X=x)=\Pr(X(u)=x)=\sum_{X(u)=x}\Pr(u).\label{eq:pf}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En sådan sandsynlighedsfunktion kan bruges til at finde sandsynligheden
+ for, at en diskret stokastisk variabel 
+\begin_inset Formula $X$
+\end_inset
+
+ tager en given værdi 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ I anden kolonne af tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Udfaldsrum-af"
+
+\end_inset
+
+ er sandsynlighederne for de enkelte udfald af den stokastiske variabel
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ plottet ind.
+\end_layout
+
+\begin_layout Standard
+En stokastisk variabel med en kontinuert fordeling er derimod kendetegnet
+ ved dens tæthedsfunktion (
+\emph on
+probability density function
+\emph default
+, 
+\emph on
+p.d.f.
+\emph default
+), der er givet ved
+\begin_inset Formula 
+\[
+\Pr(a\leq X\leq b)=\int_{a}^{b}f(x)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Enhver fordeling kan kendetegnes i kraft af sin (kumulative) fordelingsfunktion
+ (
+\emph on
+cumulative distribution function
+\emph default
+; 
+\emph on
+c.d.f.
+\emph default
+), dvs.
+ uanset om variablen er diskret, kontinuert eller noget helt tredje.
+ Fordelingsfunktionen af en stokastisk variabel 
+\begin_inset Formula $X$
+\end_inset
+
+ er funktionen 
+\begin_inset Formula 
+\begin{equation}
+F(x)=\Pr(X\leq x)\quad\text{for}\:-\infty<x<\infty.\label{eq:cdf1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fordelingsfunktionen kan anvendes til udregne sandsynligheder, således at
+ 
+\begin_inset Formula 
+\begin{equation}
+\Pr(X>x)=1-F(x).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De to hændelser 
+\begin_inset Formula $\{X>x\}$
+\end_inset
+
+ og 
+\begin_inset Formula $\{X\leq x\}$
+\end_inset
+
+ er disjunkte og deres foreningshændelse er hele udfaldsrummet 
+\begin_inset Formula $U$
+\end_inset
+
+, hvis sandsynlighed er 1.
+ Vi har derfor 
+\begin_inset Formula 
+\[
+\Pr(X>x)+\Pr(X\leq x)=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Endvidere er fordelingsfunktionen kendetegnet ved det forhold, at for alle
+ værdier 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ og 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+, hvor 
+\begin_inset Formula $x_{1}<x_{2}$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{equation}
+\Pr(x_{1}<X\leq x_{2})=F(x_{2})-F(x_{1}).\label{eq:cfd3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 3.3.
+ fra side 107 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Simultan- og marginalfordelinger
+\end_layout
+
+\begin_layout Standard
+Den marginale fordeling af 
+\begin_inset Formula $X$
+\end_inset
+
+ angiver fordelingen af 
+\begin_inset Formula $X$
+\end_inset
+
+ uanset værdien af 
+\begin_inset Formula $Y$
+\end_inset
+
+, mens simultanfordelinger giver os information om sammenhænge mellem visse
+ variable.
+ I tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Simultanfordeling-af-afgroeder"
+
+\end_inset
+
+ ser vi eksempelvis simultan- og marginalfordelingerne af afgrøderne 
+\begin_inset Formula $X$
+\end_inset
+
+ og 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ Marginalfordelingen af 
+\begin_inset Formula $X$
+\end_inset
+
+ aflæses i den yderste højre søjle, mens marginalfordelingen af 
+\begin_inset Formula $Y$
+\end_inset
+
+ findes i den nederste række.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Simultan- og marginalfordelingerne af afgrøder 
+\begin_inset Formula $X$
+\end_inset
+
+ og 
+\begin_inset Formula $Y$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Simultanfordeling-af-afgroeder"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X$
+\end_inset
+
+/
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+120
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+120
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,30
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(y)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size footnotesize
+Kilde: Sommereksamen 2013, opgave 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sandsynlighedsfunktionen for 
+\begin_inset Formula $(X,Y)$
+\end_inset
+
+ er givet ved
+\begin_inset Formula 
+\begin{equation}
+f(x,y)=\Pr(X=x,Y=y)=\Pr[X(u)=x,Y(u)=y].\label{eq:faelles_sandsynlighedsfunktion}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Den marginale sandsynlighedsfunktion for 
+\begin_inset Formula $X$
+\end_inset
+
+ er givet ved
+\begin_inset Formula 
+\begin{equation}
+f_{x}(x)=\sum_{\text{Alle }y}f(x,y).\label{eq:marginale_sandsynlighedsfunktion}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi kan eksempelvis anvende ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:marginale_sandsynlighedsfunktion"
+
+\end_inset
+
+ til finde den marginale sandsynlighedsfunktionen i tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Simultanfordeling-af-afgroeder"
+
+\end_inset
+
+ for 
+\begin_inset Formula $X=60$
+\end_inset
+
+ ved at skrive 
+\begin_inset Formula 
+\begin{eqnarray*}
+f_{x}(60) & = & f(60,100)+f(60,110)+f(60,120)+f(60,100)\\
+ & = & 0,10+0,05+0,05+0=0,20.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 3.5 fra side 130 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, noterne til Forelæsning 3 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "junge2012forelaesningsnoter"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Betingede fordelinger
+\end_layout
+
+\begin_layout Standard
+Vi kan også tale om betingede fordelinger.
+ Hvis vi igen ser på tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Simultanfordeling-af-afgroeder"
+
+\end_inset
+
+ med simultanfordelingen af afgrøderne 
+\begin_inset Formula $X$
+\end_inset
+
+ og 
+\begin_inset Formula $Y$
+\end_inset
+
+, kan vi eksempelvis finde den betingede fordeling af 
+\begin_inset Formula $X$
+\end_inset
+
+ givet at 
+\begin_inset Formula $Y$
+\end_inset
+
+ er 110 ved at tage sandsynlighederne i den anden kolonne og dividere dem
+ med sandsynligheden for 
+\begin_inset Formula $Y=110$
+\end_inset
+
+.
+ Resultatet ser vi i tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Den-betingede-fordeling"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Den betingede fordeling af 
+\begin_inset Formula $X$
+\end_inset
+
+ givet 
+\begin_inset Formula $Y=110$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Den-betingede-fordeling"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pasted7.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis to variable 
+\begin_inset Formula $X$
+\end_inset
+
+ og 
+\begin_inset Formula $Y$
+\end_inset
+
+ har en diskret fælles fordelingsfunktion 
+\begin_inset Formula $f$
+\end_inset
+
+, så lad 
+\begin_inset Formula $f_{y}$
+\end_inset
+
+ være den marginal fordelingsfunktion af 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ Vi kan nu skrive den betingede sandsynlighedsfunktion 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+ af 
+\begin_inset Formula $X$
+\end_inset
+
+ givet 
+\begin_inset Formula $Y$
+\end_inset
+
+ som
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{1}(x|y)=\frac{f(x,y)}{f_{y}(y)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alternativt kan vi skrive det op således,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr(X=x|Y=y)=\frac{\Pr(X=x,Y=y)}{\Pr(Y=y)},
+\]
+
+\end_inset
+
+ hvor tælleren er transformeret med ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:faelles_sandsynlighedsfunktion"
+
+\end_inset
+
+ og nævneren er transformeret med ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:pf"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vi har endvidere det resultat, at
+\begin_inset Formula 
+\[
+\sum_{x}g_{1}(x|y)=1.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 3.6 fra side 141 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, noterne til Forelæsning 3 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "junge2012forelaesningsnoter"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+Middelværdi eller forventet værdi
+\end_layout
+
+\begin_layout Standard
+For en stokastisk variabel 
+\begin_inset Formula $X$
+\end_inset
+
+ med en diskret fordeling kan vi finde dens forventede værdi med formlen
+\begin_inset Formula 
+\begin{equation}
+E(X)=\sum xf(x),\label{eq:E(X)}
+\end{equation}
+
+\end_inset
+
+ hvor 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ er dens sandsynlighedsfunktion som defineret i ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:pf"
+
+\end_inset
+
+.
+ I praksis kan vi skrive
+\begin_inset Formula 
+\[
+E(X)=\sum_{i=1}^{n}x_{i}\Pr(X=x_{i}),
+\]
+
+\end_inset
+
+dvs.
+ vi tager summen af produkterne mellem de enkelte udfald og deres sandsynlighede
+r.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+Ex <- 60*.2+90*.25+120*.3+150*.25
+\end_layout
+
+\begin_layout Plain Layout
+
+a <- format(Ex, decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I eksemplet med de to afgrøder fra sommereksamens 2013, skal vi finde den
+ forventede af 
+\begin_inset Formula $X$
+\end_inset
+
+ henholdsvis 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ Dem finder vi ved at kigge i tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Simultanfordeling-af-afgroeder"
+
+\end_inset
+
+ med simultanfordelingen af 
+\begin_inset Formula $X$
+\end_inset
+
+ og 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ For at finde middelværdien af 
+\begin_inset Formula $X$
+\end_inset
+
+ finder vi dens marginale fordeling, hvilket vi har gjort i tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Marginalfordelingen-af"
+
+\end_inset
+
+, og ganger de enkelte sandsynligheder for udfaldene med værdierne af udfaldene,
+ hvorfor vi nu kan skrive
+\begin_inset Formula 
+\[
+E(X)=60\times0,2+90\times0,25+120\times0,3+150\times0,25=\Sexpr{a}.
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+E(aX+bY)=aE(X)+bE(Y).\label{eq:funktioner_middelværdi}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis vi bliver bedt om at finde middelværdien af en variabel 
+\begin_inset Formula $Z$
+\end_inset
+
+, der er eksempelvis er defineret som
+\begin_inset Formula 
+\[
+Z=\theta X+(1-\theta)Y,
+\]
+
+\end_inset
+
+ hvor 
+\begin_inset Formula $\theta$
+\end_inset
+
+ er andelen af 
+\begin_inset Formula $X$
+\end_inset
+
+ og 
+\begin_inset Formula $1-\theta$
+\end_inset
+
+ er andelen af 
+\begin_inset Formula $Y$
+\end_inset
+
+, kan vi anvende ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:funktioner_middelværdi"
+
+\end_inset
+
+ til at finde
+\begin_inset Formula 
+\[
+E(Z)=E[\theta X+(1-\theta)Y]=\theta E(X)+(1-\theta)E(Y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I sommereksamen fra 2013 bliver vi i delopgave 1.3 bedt om, at finde det
+ forventede antal fertilitetsbehandlinger indtil en vellykket behandling
+ for en tilfældig kunde, givet at halvdelen af kunderne er ældre end 35
+ år.
+ Vi ved, at sandsynligheden for en vellykket behandling, givet at kunden
+ er 35 eller yngre er 15%, mens den kun 10%, hvis kunden er over 35 år.
+ Vi lader 
+\begin_inset Formula $D$
+\end_inset
+
+ være en stokastisk variable, hvor den tager værdien 1, hvis kunden er 35
+ eller derunder, og værdien 0, hvis kunden er over 35 år.
+ Endvidere lader vi 
+\begin_inset Formula $Z$
+\end_inset
+
+ være antallet af behandlinger, indtil en vellykket behandling, der følger
+ en geometrisk fordeling (se afsnit 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Geometriske-fordelinger"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+a <- format(0.9/0.1+1, decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For at udregne det forventede antal behandlinger 
+\begin_inset Formula $E(Z)$
+\end_inset
+
+ kan vi benytte loven om total sandsynlighed fra ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:law_of_total_prob"
+
+\end_inset
+
+, fordi vi er interesserede i den forventede værdi (sandsynligheden) af
+ en variable, og vi kender de betingede sandsynligheder samt sandsynligheden
+ for den variabel, vi betinger med (i dette tilfælde alder, da vi får at
+ vide, at halvdelen er over 35 år: 
+\begin_inset Formula $\Pr(D=1)=\Pr(D=0)=1/2$
+\end_inset
+
+).
+ Vi har altså to betingede sandsynligheder, nemlig det forventede antal
+ behandling inden en vellykket behandling, givet at kunden er over 35 
+\begin_inset Formula $E(Z|D=0)$
+\end_inset
+
+ og det forventede antal behandlinger inden en vellykket behandling, givet
+ at kunden er 35 år eller yngre 
+\begin_inset Formula $E(Z|D=1).$
+\end_inset
+
+ Fra delopgave 1.1 ved vi, at 
+\begin_inset Formula $E(Z|D=1)=6\frac{2}{3}$
+\end_inset
+
+ (ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:fert"
+
+\end_inset
+
+).
+ For at benytte loven om total sandsynlighed mangler vi nu kun 
+\begin_inset Formula $E(Z|D=0)$
+\end_inset
+
+, hvilken vi kan finde ved at anvende ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:geo_E"
+
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+E(Z|D=0)=\frac{1-p}{p}+1=\frac{1-0,1}{0,1}+1=\Sexpr{a}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi har nu al den information, vi skal bruge for at finde svaret ved hjælp
+ af loven om total sandsynlighed, så vi skriver
+\begin_inset Formula 
+\begin{eqnarray*}
+E(Z) & = & \Pr(D=1)E(Z|D=1)+\Pr(D=0)E(Z|D=0)\\
+ & = & \frac{1}{2}\times6\frac{2}{3}+\frac{1}{2}\times10\\
+ & = & 8\frac{1}{3}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I eksemplet vi tidligere har arbejdet med om salg af de to varer 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ og 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+, hvor den totale profit er givet ved 
+\begin_inset Formula $Y=5.000X_{1}+10.000X_{2}$
+\end_inset
+
+, kan vi også se på, hvad den forventede profit 
+\begin_inset Formula $E(Y)$
+\end_inset
+
+ er, givet at der ikke er noget salg af 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+, dvs.
+ 
+\begin_inset Formula $E(Y|X_{1}=0)$
+\end_inset
+
+.
+ Vi kan bruge ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:E(X)"
+
+\end_inset
+
+ til at opskrive problemet som
+\begin_inset Formula 
+\[
+E(Y|X_{1}=0)=\sum_{y}yf(y|X_{1}=0).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da 
+\begin_inset Formula $X_{1}=0$
+\end_inset
+
+, har vi 
+\begin_inset Formula $Y=5.000\times0+10.000X_{2}=10.000X_{2},$
+\end_inset
+
+ hvorfor vi kan fortsætte til at skrive
+\begin_inset Formula 
+\[
+\sum_{y}yf(y|X_{1}=0)=\sum_{x_{2}}10.000x_{2}f(10.000x_{2}|X_{1}=0).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Næste skridt er at finde de betingede sandsynligheder af 
+\begin_inset Formula $10.000x_{2}$
+\end_inset
+
+, givet vi ikke sælger noget af 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+, dvs.
+ 
+\begin_inset Formula $\Pr(10.000x_{2}|X_{1}=0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Når 
+\begin_inset Formula $X_{2}=0$
+\end_inset
+
+ får vi, at
+\begin_inset Formula 
+\[
+1000\times0x_{2}f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hvordan får jeg resultatet, at 
+\begin_inset Formula $ $
+\end_inset
+
+ 
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisning
+\end_layout
+
+\begin_layout Standard
+Se afsnit 4.1 fra side 207 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+ samt siderne 72-4 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Betingede forventninger
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 4.7 fra side 256 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Varians og kovarians
+\end_layout
+
+\begin_layout Standard
+Variansen fortæller os noget om, hvordan en given variable fordeler sig
+ omkring middelværdien.
+ Variansen for en given variable 
+\begin_inset Formula $X$
+\end_inset
+
+ er givet ved
+\begin_inset Formula 
+\begin{equation}
+\text{Var}(X)=E[(X-\mu)^{2}].\label{eq:Var}
+\end{equation}
+
+\end_inset
+
+ Alternativt kan variansen udregnes som
+\begin_inset Formula 
+\[
+\text{Var}(X)=E(X^{2})-[E(X)]^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kovariansen mellem to stokastiske variable er defineret ved
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cov}(X,Y) & = & E[(X-\mu_{X})(Y-\mu_{Y})]\\
+ & = & E(XY)-E(X)E(Y).
+\end{eqnarray*}
+
+\end_inset
+
+ Kovariansen mellem 
+\begin_inset Formula $X$
+\end_inset
+
+ og 
+\begin_inset Formula $Y$
+\end_inset
+
+ er defineret som den forventede værdi af produktet mellem kvadratroden
+ af variansen for deres individuelle varianser.
+\end_layout
+
+\begin_layout Standard
+Hvis 
+\begin_inset Formula $X$
+\end_inset
+
+ og 
+\begin_inset Formula $Y$
+\end_inset
+
+ er uafhængige, er kovariansen lig nul.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\text{Var}(aX+bY+c)=a^{2}\text{Var}(X)+b^{2}\text{Var}(Y)+2ab\text{Cov}(X,Y)\label{eq:VAR_funk}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Specielle fordelinger
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+Formålet med denne del er at introducere de mest almindelige fordelinger.
+\end_layout
+
+\begin_layout Paragraph
+Formålsbeskrivelse fra kursets fagbeskrivelse
+\end_layout
+
+\begin_layout Quote
+Kende og genkende de mest anvendte diskrete og kontinuerte fordelinger som:
+ Bernoulli, Binomial, Poisson, multinomial, negative binomial fordeling,
+ hypergeometrisk, geometrisk, lige-, normal-, Chi-i-anden-, eksponential,
+ gamma-, t-, F-fordeling samt at selvstændigt kunne arbejde med disse fordelinge
+r i konkrete problemstillinger.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://kurser.ku.dk/course/a%c3%98kb08019u/2013-2014
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bernoulli- og binomialfordelinger
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Binomialfordelinger
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En stokastisk variable 
+\begin_inset Formula $X$
+\end_inset
+
+ har en Bernoulli-fordeling med parameteren 
+\begin_inset Formula $p$
+\end_inset
+
+, hvis 
+\begin_inset Formula $X$
+\end_inset
+
+ kun kan tage værdier 0 og 1, og sandsynlighederne er givet ved
+\begin_inset Formula 
+\begin{equation}
+\Pr(X=1)=p\quad og\quad\Pr(X=0)=1-p=q.\label{eq:Bernoulli_Pr}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Herfra kan vi udlede, at
+\begin_inset Formula 
+\begin{equation}
+\Pr(X=1)=1-\Pr(X=0).\label{eq:Bern_Pr}
+\end{equation}
+
+\end_inset
+
+Den forventede værdi af 
+\begin_inset Formula $X$
+\end_inset
+
+ er
+\begin_inset Formula 
+\begin{equation}
+E(X)=1\times p+0\times q=p,
+\end{equation}
+
+\end_inset
+
+ og variansen er
+\begin_inset Formula 
+\begin{equation}
+\text{VAR}(X)=E(X^{2})-[E(X)]^{2}=p(1-p).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En binomialfordeling har ikke kun parameteren 
+\begin_inset Formula $p$
+\end_inset
+
+, men også parameteren 
+\begin_inset Formula $n$
+\end_inset
+
+, hvor 
+\begin_inset Formula $0\leq p\leq1$
+\end_inset
+
+ og 
+\begin_inset Formula $n>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Den forventede værdi af en variable, der har en binomialfordeling er
+\begin_inset Formula 
+\begin{equation}
+E(X)=\sum_{i=1}^{n}E(X_{i})=np.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Som vi tidligere har set, antager opgave 2
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Opgave-2-fra"
+
+\end_inset
+
+ fra sommereksaminen 2012, at vi har 1200 pendlere, hvoraf 800 tager bilen
+ og resten (
+\begin_inset Formula $1200-800=400$
+\end_inset
+
+) cykler.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se siden med gamle eksamensopgaver for Økonometri A her: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bit.ly/17DofqZ"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ Den første delopgave beder os om at beskrive med en sandsynlighedsmodel
+ den hændelse, at der med tilbagelægning trækkes ti tilfældige pendlere.
+ Først, lader vi 
+\begin_inset Formula $X$
+\end_inset
+
+ være en stokastisk variabel, der beskriver det antal gange 
+\begin_inset Formula $i$
+\end_inset
+
+, hvor vi trækker en bilist.
+ Vi ser, at vi har to mulige udfald for hvert forsøg (udtrækning), nemlig
+ bilist eller cyklist, hvorfor vi konkluderer, at vores variabel er binomialford
+elt.
+ En sådan fordeling skrives som 
+\begin_inset Formula 
+\begin{equation}
+X\sim B(n,p),
+\end{equation}
+
+\end_inset
+
+hvor 
+\begin_inset Formula $n$
+\end_inset
+
+ er antallet af forsøg, i vores tilfælde 10, og 
+\begin_inset Formula $p$
+\end_inset
+
+ er sandsynligheden for 
+\begin_inset Quotes eld
+\end_inset
+
+succes
+\begin_inset Quotes erd
+\end_inset
+
+ (at trække en bilist i vores forsøg, 
+\begin_inset Formula $800/1200=2/3$
+\end_inset
+
+).
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "olesen2007introduktion"
+
+\end_inset
+
+ for mere om binomialfordelingen og dens danske terminologi.
+\end_layout
+
+\end_inset
+
+ Vi kan således beskrive situationen med sandsynlighedsmodellen 
+\begin_inset Formula $X\sim B(10,2/3)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+VARX0 <- 20/9
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi bliver også bedt om at finde det forventede antal bilister samt at finde
+ variansen.
+ Da vi har defineret variablen 
+\begin_inset Formula $X$
+\end_inset
+
+ som antallet af gange, vi trækker en bilist i vores eksperiment, udregner
+ vi den forventede værdi af 
+\begin_inset Formula $X$
+\end_inset
+
+, hvilket i tilfælde af en stokastisk variabel med en binomialfordeling
+ er givet ved 
+\begin_inset Formula 
+\begin{equation}
+E(X)=np.
+\end{equation}
+
+\end_inset
+
+Vi får således 
+\begin_inset Formula $E(X)=10\times2/3=20/3$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Variansen er givet ved sætningen 
+\begin_inset Formula 
+\begin{equation}
+\text{Var}(X)=np(1-p),\label{eq:Varbinom}
+\end{equation}
+
+\end_inset
+
+hvilket i vores eksempel giver 
+\begin_inset Formula $\text{Var(X)}=10\times2/3\times1/3=20/9=\Sexpr{VARX0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Et andet eksempel på en variabel med en binomialfordeling er en variabel,
+ der beskriver de elever, der har opnået en højere resultat i den anden
+ test i figur 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Resultater-fra-to"
+
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Opgave 3, sommereksamen 2012.
+\end_layout
+
+\end_inset
+
+ Variablen er binomial, fordi vi kun har to udfald.
+ Variablen kalder vi igen 
+\begin_inset Formula $X$
+\end_inset
+
+ og kan beskrives som
+\begin_inset Formula 
+\[
+X\sim\text{Bin}(26,p).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultater fra to matematiktest, marts 2011
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resultater-fra-to"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pasted1.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Kilde: Opgave 3, sommereksamen 2012.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Herefter bliver vi bedt om, at estimere 
+\begin_inset Formula $p$
+\end_inset
+
+, der er defineret som 
+\begin_inset Formula $Pr(\text{differens}>0)$
+\end_inset
+
+, dvs.
+ sandsynligheden for, at en elev får en højere testresultat i den anden
+ test.
+ Den finder vi ved at dividere antallet af gange, at en elev har fået et
+ højere testresultat med det samlede antal elever, så vi får
+\begin_inset Formula 
+\[
+\hat{p}=\frac{17}{26}.
+\]
+
+\end_inset
+
+ Denne estimator er middelret og konsistent.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hvorfor?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I sommereksamen fra 2013 bliver vi i delopgave 1.2 bedt om at finde den forvented
+e pris for en vellykket behandling, givet at vi benytter en prispakke, der
+ inkluderer fem behandlinger for kr.
+ 40.000.
+ Vi ved, at sandsynligheden for en vellykket behandling er 0,15.
+ Vi definerer 
+\begin_inset Formula $X$
+\end_inset
+
+ til at være antallet af vellykkede behandlinger ved fem behandlinger, 
+\begin_inset Formula 
+\[
+X\sim\text{Bin}(5;0,15).
+\]
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+a <- format((0.85^5),decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+b <- format((1-0.85^5),decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi skal nu finde sandsynligheden for, at 
+\begin_inset Formula $X$
+\end_inset
+
+ er større eller lig en, dvs.
+ 
+\begin_inset Formula $\Pr(X\geq1)$
+\end_inset
+
+.
+ Vi ved fra ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:Bern_Pr"
+
+\end_inset
+
+, at 
+\begin_inset Formula $\Pr(X\geq1)=1-\Pr(X=0)$
+\end_inset
+
+.
+ Sandsynligheden for 
+\begin_inset Formula 
+\begin{equation}
+\Pr(X=0)=(1-p)^{n},
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hvorfor?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+så vi kan nu finde ud af, at 
+\begin_inset Formula $\Pr(X=0)=0,85^{5}=\Sexpr{a}$
+\end_inset
+
+, hvilket giver os vores endelige resultat, nemlig 
+\begin_inset Formula 
+\[
+\Pr(X\geq1)=1-\Pr(X=0)=1-\Sexpr{a}=\Sexpr{b}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 5.2 fra side 275 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+ samt afsnit 7.
+ fra side 125 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "olesen2007introduktion"
+
+\end_inset
+
+ for nærmere uddybning af variable med binomialfordelinger.
+\end_layout
+
+\begin_layout Section
+Poisson-fordeling
+\end_layout
+
+\begin_layout Section
+Uniformfordeling
+\end_layout
+
+\begin_layout Standard
+Hvis 
+\begin_inset Formula $X$
+\end_inset
+
+ har en diskret uniform fordeling kan fordelingsfunktionen skrives som 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & \frac{1}{b-a+1}\text{ for }x=a,\dotsc,b,\quad0\text{ otherwise}\\
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hypergeometriske fordelinger
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hypergeometriske fordelinger
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hypergeometriske fordelinger anvendes, når vi har en Bernoulli stokastisk
+ variabel med en endelig population, hvorfra vi trækker uden tilbagelægning.
+ Vi kan eksempelvis antage, at vi har en boks med 
+\begin_inset Formula $A$
+\end_inset
+
+ røde kugler og 
+\begin_inset Formula $B$
+\end_inset
+
+ blå kugler, hvorfra vi trækker 
+\begin_inset Formula $n\geq0$
+\end_inset
+
+ kugler uden tilbagelægning.
+ Da vi ikke lægger nogle kugler tilbage, må 
+\begin_inset Formula $n\leq A+B$
+\end_inset
+
+ (vi kan ikke trække flere kugler, end der er, når vi ikke lægger nogle
+ tilbage i boksen).
+ Når vi trækker minimum én kugle (
+\begin_inset Formula $n\geq1$
+\end_inset
+
+), kan vi skrive udfaldet, at kuglen er rød som 
+\begin_inset Formula $X_{i}=1$
+\end_inset
+
+.
+ Hvert udfald 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ har en Bernoulli-fordeling, men de er ikke uafhængige, fordi sandsynligheden
+ for et givet udfald ændrer sig, når vi ikke lægger kugler tilbage i boksen.
+ Da 
+\begin_inset Formula $X$
+\end_inset
+
+ er afhængig af tidligere udfald, kan 
+\begin_inset Formula $X$
+\end_inset
+
+ ikke siges at have en binomialfordeling.
+\end_layout
+
+\begin_layout Standard
+En hypergeometrisk fordeling kan siges at have parametrene 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ og 
+\begin_inset Formula $n$
+\end_inset
+
+, hvor 
+\begin_inset Formula $A$
+\end_inset
+
+ er det ønskede udfald (succes), mens 
+\begin_inset Formula $B=T-A$
+\end_inset
+
+, hvor 
+\begin_inset Formula $T$
+\end_inset
+
+ er antallet af enheder i den endelige population, hvoraf udfaldene 
+\begin_inset Formula $A$
+\end_inset
+
+ og 
+\begin_inset Formula $B$
+\end_inset
+
+ trækkes.
+\end_layout
+
+\begin_layout Standard
+Variansen for en variabel med en hypergeometrisk fordeling er givet ved
+ udtrykket 
+\begin_inset Formula 
+\begin{equation}
+\text{Var}(X)=\frac{nAB}{(A+B)^{2}}\times\frac{A+B-n}{A+B-1},\label{eq:hypergeoVAR}
+\end{equation}
+
+\end_inset
+
+mens middelværdien er givet ved 
+\begin_inset Formula 
+\begin{equation}
+E(X)=\frac{nA}{A+B}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis vi sammenligner med en udvælgelsesmetode med tilbagelægning ser vi,
+ at middelværdien af det ønskede udfald i begge tilfælde er 
+\begin_inset Formula $nA/(A+B)$
+\end_inset
+
+, men at variansen ændres.
+ Variansen kan skrives som 
+\begin_inset Formula $np(1-p)$
+\end_inset
+
+ med tilbagelægning (se ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Varbinom"
+
+\end_inset
+
+), mens variansen uden tilbagelægning kan skrives som 
+\begin_inset Formula 
+\begin{eqnarray}
+\text{Var}(X) & = & np(1-p)\frac{T-n}{T-1},\nonumber \\
+\text{Var}(X) & = & np(1-p)\alpha\label{eq:Var_hyper_alph}
+\end{eqnarray}
+
+\end_inset
+
+ hvor 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ er den faktor med hvilken variansen ændres (formindskes), når vi ikke anvender
+ tilbagelægning.
+ Denne faktor 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ siger noget om, hvordan variansen ændrer sig, når vi sammenligner henholdsvis
+ en udvælgelsesmetode med og uden tilbagelægning.
+ Vi ser, at 
+\begin_inset Formula $\alpha\to1$
+\end_inset
+
+, når 
+\begin_inset Formula $T\to\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>= 
+\end_layout
+
+\begin_layout Plain Layout
+
+alpha <- (1200-10)/(1200-1)
+\end_layout
+
+\begin_layout Plain Layout
+
+VARX <- 10*(2/3)*(1-2/3)*alpha
+\end_layout
+
+\begin_layout Plain Layout
+
+VARX2 <- ((10*800*400)/(1200^2))*((1200-10)/(1200-1))
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Hvis vi vender tilbage til vores udtrækning med tilbagelægning af ti pendlere
+ ud af 1200, hvoraf 800 tager bilen og 400 tager cyklen (se side 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Opgave-2-fra"
+
+\end_inset
+
+), kan vi nu se på, hvad der sker, hvis vi laver en udtrækning uden tilbagelægni
+ng.
+ Middelværdien er den samme, dsv.
+ 
+\begin_inset Formula $E(X)=np=10\times2/3=20/3$
+\end_inset
+
+, men variansen ændrer sig med faktoren 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ (se ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Var_hyper_alph"
+
+\end_inset
+
+).
+ I pendlereksemplet er 
+\begin_inset Formula $T=1800$
+\end_inset
+
+, så er 
+\begin_inset Formula $\alpha=(1200-10)/(1200-1)=$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{alpha}
+\end_layout
+
+\end_inset
+
+, hvorfor 
+\begin_inset Formula 
+\[
+\text{Var}(X)=10\times2/3\times(1-2/3)\times\Sexpr{alpha}=\Sexpr{format(VARX,decimal.mark=",")}.
+\]
+
+\end_inset
+
+Udregnet med ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:hypergeoVAR"
+
+\end_inset
+
+, har vi 
+\begin_inset Formula 
+\[
+\text{VAR}(X)=\frac{10\times800\times400}{1200^{2}}\times\frac{1200-10}{1200-1}=\Sexpr{format(VARX2,decimal.mark=",")},
+\]
+
+\end_inset
+
+ hvilket naturligvis giver samme resultat.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+I rettevejledningen til eksamenen (Sommer 2012) vises resultatet 2,08...
+\end_layout
+
+\end_inset
+
+ Sammenlignet med variansen i første del af spørgsmålet, hvor vi lavede
+ udtrækningen med tilbagelægning, har vi nu en lavere varians (
+\begin_inset Formula $\Sexpr{VARX0}>\Sexpr{VARX}$
+\end_inset
+
+), men som vi noterede ovenfor mindskes denne forskel, jo større populationen
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ bliver.
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 5.3 fra side 281 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Geometriske fordelinger
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Geometriske-fordelinger"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis vi forestiller os en fertilitetsklinik, der tilbyder behandling mod
+ barnløshed, hvor sandsynlighden for en vellykket behandling er 0,15, og
+ at de enkelte behander er uafhængige, kan vi modellere antallet af behandlinger
+, indtil vi får en vellykket behandling med en variabel, der følger en geometris
+k fordeling.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Eksemplet er hentet fra sommereksamen 2013.
+\end_layout
+
+\end_inset
+
+ Hvis vi altså ønsker at observere antallet af fiaskoer (
+\emph on
+failures
+\emph default
+), indtil vi får succes, kan vi anvende geometriske fordelinger.
+\end_layout
+
+\begin_layout Standard
+Da vi til forskel fra de almindelige Bernoulli- og binomialfordelinger nu
+ fokuserer på antallet af fiaskoer, hører geometriske fordelinger in under
+ grupper af fordelinger, vi kalder for negative binomialefordelinger.
+\end_layout
+
+\begin_layout Standard
+Den forventede værdi af en variabel 
+\begin_inset Formula $X$
+\end_inset
+
+, der er geometrisk fordelt, er
+\begin_inset Formula 
+\begin{equation}
+E(X)=\frac{1-p}{p}.\label{eq:geo_E}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+a <- format((1-0.15)/0.15+1, decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hvis vi ønsker at vide, hvor mange behandlinger, der skal til, før vi får
+ en vellykket behandling kan vi bruge ligning 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:geo_E"
+
+\end_inset
+
+ plus 1, da den jo giver antallet af mislykkedes behandlinger, inden vi
+ får en vellykket behandling.
+ Vi får altså
+\begin_inset Formula 
+\begin{equation}
+E(X)+1=\frac{1-0,15}{0,15}+1=\Sexpr{a}.\label{eq:fert}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 5.5 fra side 287 i 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "degroot2012probability"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://mathworld.wolfram.com/GeometricDistribution.html"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Normalfordelinger
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Normalfordelinger"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tæthedsfunktionen af en normalfordeling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+x <- seq(-4,4,0.1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(x,dnorm(x),type="l")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi kan konvertere normalfordelinger til standard normalfordelinger med en
+ middelværdi på 0 og en varians på 1 ved at trække middelværdien fra den
+ givne variable og dividere med kvadradroden af variansen.
+ Hvis vi eksempelvis har den normalfordelte variable 
+\begin_inset Formula $X$
+\end_inset
+
+ kan vi konvertere den til en standard normalfordelt variable 
+\begin_inset Formula $Z$
+\end_inset
+
+ på følgende måde
+\begin_inset Formula 
+\[
+Z=\left(\frac{X-\mu}{\sigma}\right).
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Vi ser, at hvis 
+\begin_inset Formula $X$
+\end_inset
+
+ er standard normalfordelt, betegner vi den kumulative fordelingsfunktion
+ med 
+\begin_inset Formula $\Phi(x)$
+\end_inset
+
+ og tæthedsfunktionen med 
+\begin_inset Formula $\phi(x)$
+\end_inset
+
+.
+ Hvis ikke 
+\begin_inset Formula $X$
+\end_inset
+
+ er standard normalfordelt anvender vi 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ for tæthedsfunktionen, mens 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ betegner den kumulative fordelingsfunktion.
+ Vi kan altså skrive
+\begin_inset Formula 
+\begin{equation}
+F(x)=\Phi\left(\frac{x-\mu}{\sigma}\right).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da standard normalfordelingen er symmetrisk, har vi følgende to resultater
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\Phi(-x) & = & 1-\Phi(x),\\
+\Phi^{-1}(p) & = & -\Phi^{-1}(1-p).
+\end{eqnarray}
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+a <- 1/sqrt(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+a1 <- format(a,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+b <- pnorm(a)
+\end_layout
+
+\begin_layout Plain Layout
+
+b1 <- format(b,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+c <- pnorm(-a)
+\end_layout
+
+\begin_layout Plain Layout
+
+c1 <- format(c,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+d <- b-c
+\end_layout
+
+\begin_layout Plain Layout
+
+d1 <- format(d,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi kan nogle gange komme ud for at skulle udregne sandsynligheder for absolutte
+ afvigelser fra et givet tal.
+ Da kan vi bruge sammenhængen, at
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pr(|X|\leq x)=\Pr(-X\leq x\leq X).\label{eq:abs.dev.}
+\end{equation}
+
+\end_inset
+
+ Sandsynligheden for at variablen 
+\begin_inset Formula $X$
+\end_inset
+
+ afviger i absolute forstand fra 
+\begin_inset Formula $x$
+\end_inset
+
+ er givet ved sandsynligheden for, at 
+\begin_inset Formula $x$
+\end_inset
+
+ er større eller lig med den negative værdi af 
+\begin_inset Formula $X$
+\end_inset
+
+ og mindre eller lig med den positive værdi af 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://math.stackexchange.com/questions/282690/normal-probability-distribution-with-absolute-value-of-x"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "koeleskabe1.1."
+
+\end_inset
+
+I en eksamensopgave får vi at vide, at en virksomhed har produceret en køleskabs
+model, der har et dagligt strømforbrug, der er normalfordelt med en middelværdi
+ på 25 kWh og en varians på 2.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Sommereksamen 2012, spørgsmål 1.
+\end_layout
+
+\end_inset
+
+ Vi bliver derefter spurgt om, hvad sandsynligheden er for, at et tilfældigt
+ udvalgt køleskab har et strømforbrug, der ligger indenfor 1 kWh af middelværdie
+n.
+ Med en middelværdi på 25, vil vi finde sandsynligheden for, at den absolutte
+ afstand mellem strømforbruget på vores udvalgte køleskab og den opgivede
+ middelværdi er lig med eller mindre end 1, dvs.
+ 
+\begin_inset Formula $\Pr(|X-25|\leq1)$
+\end_inset
+
+.
+ For at finde denne sandsynlighed starter vi med at konvertere vores normaltford
+elte variable til en standard normalfordeling
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hvorfor?
+\end_layout
+
+\end_inset
+
+ ved at dividere med kvadratroden af variansen, så vi får 
+\begin_inset Formula 
+\[
+\Pr\left(\frac{|X-25]}{\sqrt{2}}\leq\frac{1}{\sqrt{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fra ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:abs.dev."
+
+\end_inset
+
+ ved vi, at 
+\begin_inset Formula $\Pr(|X|\leq x)=\Pr(-X\leq x\leq X)$
+\end_inset
+
+, hvilket indebærer at
+\begin_inset Formula 
+\[
+\Pr\left(\frac{|X-25]}{\sqrt{2}}\leq\frac{1}{\sqrt{2}}\right)=\Pr\left(-\frac{X-25}{\sqrt{2}}\leq\frac{1}{\sqrt{2}}\leq\frac{X-25}{\sqrt{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Desuden ved vi fra ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:cfd3"
+
+\end_inset
+
+, at 
+\begin_inset Formula $\Pr(x_{1}<X\leq x_{2})=F(x_{2})-F(x_{1})$
+\end_inset
+
+, og da vi har med standard normalfordelinger at gøre, skriver vi 
+\begin_inset Formula $\Phi(x)$
+\end_inset
+
+ i stedet for 
+\begin_inset Formula $F(x)$
+\end_inset
+
+.
+ Vi kan således skrive
+\begin_inset Formula 
+\begin{eqnarray*}
+\Pr\left(\frac{|X-25]}{\sqrt{2}}\leq\frac{1}{\sqrt{2}}\right) & = & \Pr\left(\frac{X-25}{\sqrt{2}}<\frac{1}{\sqrt{2}}\right)-\Pr\left(\frac{X-25}{\sqrt{2}}<-\frac{1}{\sqrt{2}}\right)\\
+ & = & \Phi\left(\frac{1}{\sqrt{2}}\right)-\Phi\left(-\frac{1}{\sqrt{2}}\right)\\
+ & = & \Phi\left(\Sexpr{a1}\right)-\Phi\left(-\Sexpr{a1}\right)\\
+ & = & \Phi\left(\Sexpr{a1}\right)-[1-\Phi\left(\Sexpr{a1}\right)]\\
+ & = & \Sexpr{b1}-\Sexpr{c1}\\
+ & = & \Sexpr{d1}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I eksamensspørgsmålet vedrørende strømforbrug af køleskabe, skal vi finde
+ ud af hvad sandsynlighden er for, at middelværdien af 30 tilfældigt udvalgte
+ køleskabe ikke afviger med mere 1 kWh fra 25 kWh per dag.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Sommereksamen 2012, spørgsmål 1.
+\end_layout
+
+\end_inset
+
+ Først definerer vi en ny variabel 
+\begin_inset Formula $Y$
+\end_inset
+
+, der er normalfordelt med middelværdien 25 og variansen 
+\begin_inset Formula $2/30$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+Y=\frac{1}{30}\sum x_{i}\sim N\left(25,\frac{2}{30}\right).
+\]
+
+\end_inset
+
+ Variansen er fundet ved anvende ligning 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "eq:Var"
+
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $\text{Var}(Y)=E[(Y-\mu)^{2}]$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang danish
+, hvilket i vores tilfælde giver 
+\begin_inset Formula $\text{Var}(Y)=E[(1/30-25)^{2}]=E[(1/30-25)]$
+\end_inset
+
+...
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Jeg forstår det ikke...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+a <- 1/sqrt(2/30)
+\end_layout
+
+\begin_layout Plain Layout
+
+a1 <- format(a,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+b <- pnorm(a)
+\end_layout
+
+\begin_layout Plain Layout
+
+b1 <- format(b,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+c <- pnorm(-a)
+\end_layout
+
+\begin_layout Plain Layout
+
+c1 <- format(c,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+d <- b-c
+\end_layout
+
+\begin_layout Plain Layout
+
+d1 <- format(d,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi skal nu finde sandsynligheden for, at 
+\begin_inset Formula $Y$
+\end_inset
+
+ ikke afviger mere end 1 fra middelværdien, hvilket kan opskrives som 
+\begin_inset Formula $\Pr(|Y-25|\leq1)$
+\end_inset
+
+.
+ Den eneste forskel fra delopgave 1, som vi gennemgik på side 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "koeleskabe1.1."
+
+\end_inset
+
+, er, at variansen er anderledes.
+ Den er ikke længere 2, men 2/30.
+ Vi springer derfor de indledende øvelser over og viser resultatet direkte
+ som
+\begin_inset Formula 
+\begin{eqnarray*}
+\Pr\left(\frac{|Y-25|}{\sqrt{2/30}}\leq1\right) & = & \Phi\left(\frac{1}{\sqrt{2/30}}\right)-\Phi\left(-\frac{1}{\sqrt{2/30}}\right)\\
+ & = & \Phi\left(\Sexpr{a1}\right)-\Phi\left(-\Sexpr{a1}\right)\\
+ & = & \Phi\left(\Sexpr{a1}\right)-[1-\Phi\left(\Sexpr{a1}\right)]\\
+ & = & \Sexpr{b1}-\Sexpr{c1}\\
+ & = & \Sexpr{d1}\thickapprox1.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Den sidste delopgave i opgaven om køleskabes strømforbrug beder os om at
+ udregne sandsynligheden for, at den Euklidiske afstand til middelværdien
+ ikke er større end 6, 
+\begin_inset Formula $\Pr(D\leq6)$
+\end_inset
+
+.
+ Vi får det hint, at 
+\begin_inset Formula $D^{2}/\sigma^{2}\sim\chi^{2}(30)$
+\end_inset
+
+, når 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'erne er uafhængigt og identisk fordelte.
+ Vi får desuden at vide, at 
+\begin_inset Formula $D=\sqrt{\sum_{i=1}^{30}(x_{i}-25)^{2}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Den kumulative fordelingsfunktion af en variable 
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+after "470"
+key "degroot2012probability"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi kan også komme ud for at skulle beregne værdien af et percentil.
+ Vi kan betegne 
+\begin_inset Formula $z_{p}$
+\end_inset
+
+ som det 
+\begin_inset Formula $p$
+\end_inset
+
+'te percentil i den standardiserede normalfordeling.
+ Det 
+\begin_inset Formula $p$
+\end_inset
+
+'te percentil i fordelingen 
+\begin_inset Formula $X\sim N(\mu,\sigma^{2})$
+\end_inset
+
+ er givet ved
+\begin_inset Formula 
+\begin{eqnarray}
+F_{X}(x_{p}) & = & p\label{eq:percentil}\\
+\Pr(X\leq x_{p}) & = & p\nonumber \\
+\Pr\left(\frac{X-\mu}{\sigma}\le\frac{x_{p}-\mu}{\sigma}\right) & = & p\nonumber \\
+\Phi\left(\frac{x_{p}-\mu}{\sigma}\right) & = & p\nonumber \\
+\frac{x_{p}-\mu}{\sigma} & = & z_{p}\label{eq:percentil2}\\
+x_{p} & = & \mu+z_{p}\sigma.\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Forklar de enkelte trin i ovenstående...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi kan eksempelvis blive spurgt om, hvad værdien er af 1 pct.-percentilen
+ for en variabel 
+\begin_inset Formula $X\sim N(120,1).$
+\end_inset
+
+ Vi er med andre ord interesserede i værdien af 
+\begin_inset Formula $X_{0,01}$
+\end_inset
+
+.
+ I dette tilfælde er 
+\begin_inset Formula $p=0,01$
+\end_inset
+
+.
+ Til det formål anvender vi ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:percentil2"
+
+\end_inset
+
+, hvorfor vi kan skrive
+\begin_inset Formula 
+\[
+\frac{x_{p}-\mu}{\sigma}=\frac{x_{p}-120}{1}=z_{p}.
+\]
+
+\end_inset
+
+ Næste skridt er at finde værdien af 
+\begin_inset Formula $z_{0,01}$
+\end_inset
+
+.
+ Dette kan vi enten finde ved at kigge i en tabel eller slå den op i computerpro
+gram.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 5.6 fra side 302 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+, afsnit 7.2 fra side 102 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Prior- og posteriorfordelinger
+\end_layout
+
+\begin_layout Standard
+Fordelingen af en parameter før iagttagelse af data kaldes for priorfordelingen,
+ hvorimod den betingende fordeling af parameteren givet det observerede
+ data kaldes for posteriorfordelingen.
+ Priorfordelingen kan eksempelvis være sandsynligheden for at køre i bil
+ til arbejde, mens vi får posteriorfordelingen, når vi opdaterer priorfordelinge
+n med den betingning, at det er en mand, der kører i bil.
+\end_layout
+
+\begin_layout Standard
+I vores eksempel med pendlerene, er sandsynligheden for, at pendleren er
+ en mand er 0,5 før vi har observeret nogle data, hvorfor fordelingen af
+ denne parameter er priorfordelingen.
+ Efter vi har nogle observationer ændrer sandsynligheden sig til 1/3 (posteriorf
+ordelingen).
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 7.2 fra side 385 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Estimering og hypotesetest
+\end_layout
+
+\begin_layout Section
+Konfidensintervaller
+\end_layout
+
+\begin_layout Standard
+Et konfidensinterval med en estimator for et parameter for en variabel,
+ der følger en binomial fordeling kan gives ved
+\begin_inset Formula 
+\begin{equation}
+\hat{p}\pm z\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eksemplet om de 26 tilfældigt udvalge elever og deres resultater fra de
+ to matematiktest kan anvendes til at illustrere, hvordan kan konstruerer
+ et 95% konfidensinterval for 
+\begin_inset Formula $p$
+\end_inset
+
+, som er andelen af eleverne, der fik et bedre resultat i anden test.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Sommereksamen 2012, spørgsmål 3.
+\end_layout
+
+\end_inset
+
+ Vi kan skrive
+\begin_inset Formula 
+\[
+\hat{p}\in\left[\frac{17}{26}-1,96\sqrt{\frac{\frac{17}{26}\left(1-\frac{17}{26}\right)}{26}},\frac{17}{26}+1,96\sqrt{\frac{\frac{17}{26}\left(1-\frac{17}{26}\right)}{26}}\right].
+\]
+
+\end_inset
+
+ Vi anvender konfidensintervallet for store stikprøver, dvs.
+ vælger 
+\begin_inset Formula $z=1,96$
+\end_inset
+
+, da 
+\begin_inset Formula $p$
+\end_inset
+
+ er en andel.
+\end_layout
+
+\begin_layout Standard
+Konfidensintervallet for middelværdien af en normalfordelt variable er givet
+ ved 
+\begin_inset Formula 
+\begin{equation}
+\bar{x}\pm z\frac{\sigma}{\sqrt{n}},\label{eq:CInorm}
+\end{equation}
+
+\end_inset
+
+hvor 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ er spredningen og 
+\begin_inset Formula $\bar{x}$
+\end_inset
+
+ er middelværdien.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+mu <- 15.9
+\end_layout
+
+\begin_layout Plain Layout
+
+sigma <- 36.9
+\end_layout
+
+\begin_layout Plain Layout
+
+n <- 26
+\end_layout
+
+\begin_layout Plain Layout
+
+t <- qt(0.975,df=n-1)
+\end_layout
+
+\begin_layout Plain Layout
+
+t1 <- format(t,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+error <- qt(0.975,df=n-1)*sigma/sqrt(n)
+\end_layout
+
+\begin_layout Plain Layout
+
+error1 <- format(error,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I delopgave 3.5 i Sommereksamen 2012 bliver bliver vi bedt om at udregne
+ et 95% konfidensinterval for middelværdien af differensen mellem de to
+ testresultater på et 95% konfidensinterval (se figur 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Resultater-fra-to"
+
+\end_inset
+
+ for testresultaterne).
+ Da vi kun har en lille stikprøve, anvender en 
+\begin_inset Formula $t$
+\end_inset
+
+-værdi til konfidensintervallet, dvs.
+ 
+\begin_inset Formula $t_{1-\alpha/2}(25)=\Sexpr{t1}$
+\end_inset
+
+.
+ Nu mangler vi blot at putte tallene i ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:CInorm"
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\delta}\in\left[15,9-2,06\frac{36,9}{\sqrt{26}},15,9+2,06\frac{36,9}{\sqrt{26}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+xbar <- 7.35
+\end_layout
+
+\begin_layout Plain Layout
+
+sigma <- 1.96
+\end_layout
+
+\begin_layout Plain Layout
+
+n <- 1548
+\end_layout
+
+\begin_layout Plain Layout
+
+sem <- sigma/sqrt(n)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I delopgave 3.2 i Sommereksamen fra 2013 bliver vi bedt om at udregne et
+ 95%-konfidensinterval for middelværdien af en variabel, der måler danskernes
+ holdning til det danske retssystem.
+ Vi har oplysningerne, at 
+\begin_inset Formula $n=1548$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=1,96$
+\end_inset
+
+ og 
+\begin_inset Formula $\mu=7,35$
+\end_inset
+
+.
+ Vi finder derfor løsningen ved hjælp af ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:CInorm"
+
+\end_inset
+
+ og skriver
+\begin_inset Formula 
+\[
+\hat{\mu}\in\left[7,35-1,96\frac{1,96}{\sqrt{1548}},7,35-1,96\frac{1,96}{\sqrt{1548}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 8.5 fra side 485 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Hypotesetest
+\end_layout
+
+\begin_layout Standard
+Hvis vi skal test hypoteser med en binomialfordeling er teststatistikken
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z=\frac{\hat{p}-p_{0}}{\sqrt{\frac{p_{0}(1-p_{0})}{n}}},\label{eq:BinZ}
+\end{equation}
+
+\end_inset
+
+hvor 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ er værdien af 
+\begin_inset Formula $p$
+\end_inset
+
+ under nulhypotesen.
+ Derudover ved vi, at 
+\begin_inset Formula 
+\begin{equation}
+p=1-\Phi(Z).\label{eq:pZ}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<<>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+a <- (17/26-1/2)/(sqrt(0.25/26))
+\end_layout
+
+\begin_layout Plain Layout
+
+a1 <- format(a,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+b <- pnorm(a)
+\end_layout
+
+\begin_layout Plain Layout
+
+b1 <- format(b,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+c <- 1-b
+\end_layout
+
+\begin_layout Plain Layout
+
+c1 <- format(c,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+d <- 5.9/(36.4/sqrt(26))
+\end_layout
+
+\begin_layout Plain Layout
+
+d1 <- format(d,decimal.mark=",")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+e <- 1-pnorm(d)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I eksemplet om de 26 tilfældigt udvalgt elever bliver vi bedt om at teste
+ hypotesen, at 
+\begin_inset Formula $p=1/2$
+\end_inset
+
+ mod alternativet 
+\begin_inset Formula $p>1/2$
+\end_inset
+
+.
+ Nulhypotesen skriver vi som 
+\begin_inset Formula $H_{0}:p=1/2$
+\end_inset
+
+, mens den alternative hypotese skrives som 
+\begin_inset Formula $H_{a}:p>1/2$
+\end_inset
+
+.
+ Først finder vi teststatistikken ved hjælp af ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:BinZ"
+
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+Z=\frac{17/26-1/2}{\sqrt{\frac{1/2(1-1/2)}{26}}}=\Sexpr{a1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi anvender ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:pZ"
+
+\end_inset
+
+, hvilket giver 
+\begin_inset Formula $p=1-\Sexpr{b1}=\Sexpr{c1}.$
+\end_inset
+
+ På et fem procents signifikansniveau kan nulhypotesen ikke afvises, da
+ 
+\begin_inset Formula $p>0,05$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vi bliver desuden spurgt om at teste at differensen mellem første og anden
+ test er 10, så vi skriver at nulhypotesen er 
+\begin_inset Formula $H_{0}:\mu=10$
+\end_inset
+
+ mod alternativhypotesen 
+\begin_inset Formula $H_{a}:\mu>10$
+\end_inset
+
+.
+ Vi har nu med en normalfordeling at gøre, så
+\begin_inset Formula 
+\[
+Z=\frac{\mu-\mu_{0}}{\frac{\sigma}{\sqrt{n}}}=\frac{15,9-10}{\frac{36,4}{\sqrt{26}}}=\Sexpr{d1}.
+\]
+
+\end_inset
+
+ Vi har nu
+\begin_inset Formula 
+\[
+p=1-T(z)=\Sexpr{e}
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Dette passer ikke...
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Teststørrelsen for en test af en hypotese som 
+\begin_inset Formula $\sigma_{1}=\sigma_{2}$
+\end_inset
+
+ er defineret ved
+\begin_inset Formula 
+\begin{equation}
+F=\frac{s_{1}^{2}}{s_{2}^{2}},\label{eq:test_varians}
+\end{equation}
+
+\end_inset
+
+hvis frihedsgrader er givet ved 
+\begin_inset Formula $(n_{1}-1,n_{2}-1)$
+\end_inset
+
+ og er F-fordelt.
+\end_layout
+
+\begin_layout Standard
+Hvis man bliver bedt om at estimere den fælles varians af to stikprøver,
+ kan vi bruge formlen
+\begin_inset Formula 
+\begin{equation}
+s_{f}=\sqrt{\frac{(n_{1}-1)s_{1}^{2}+(n_{2}-1)s_{2}^{2}}{n_{1}+n_{2}-2}}.\label{eq:com_var}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I eksemplet med danskernes og franskmændenes holdning til deres respektive
+ retsvæsner i undersøgelsen 
+\emph on
+European Social Survey
+\emph default
+ (ESS), bliver vi bedt om at angive teststørrelsen for den hypotese, at
+ variansen for de to grupper (franskmænd og danskere) er lig hinanden, dsv.
+ 
+\begin_inset Formula $\sigma_{1}=\sigma_{2}$
+\end_inset
+
+.
+ Her bruger vi ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:test_varians"
+
+\end_inset
+
+ for at finde
+\begin_inset Formula 
+\[
+F=\frac{2,36^{2}}{1,96^{2}}=1,45.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi bliver også bedt om at estimere den fælles varians, hvilket vi kan gøre
+ med ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:com_var"
+
+\end_inset
+
+, hvilket giver os
+\begin_inset Formula 
+\[
+s_{f}=\sqrt{\frac{(1724-1)2,36^{2}+(1548-1)1,96^{2}}{1725+1548-2}}=2,18.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For at teste om to middelværdier fra normalfordelinger med samme ukendte
+ populationsspredninger, anvender vi teststørrelsen
+\begin_inset Formula 
+\begin{equation}
+z=\frac{\bar{x}-\bar{y}-D}{s_{f}\sqrt{\frac{1}{n_{x}}+\frac{1}{n_{y}}}},\label{eq:test_mean_t}
+\end{equation}
+
+\end_inset
+
+hvor 
+\begin_inset Formula $D$
+\end_inset
+
+ er differensen, der testes for (hvis nogen).
+ 
+\end_layout
+
+\begin_layout Standard
+Hvis vi vender tilbage til vores eksempel med danskernes og franskmændenes
+ holdning til deres respektive retssystem, kan vi teste hypotesen, at de
+ to middelværdier er ens mod alternatives, at Danmarks middelværdi er større
+ end Frankrigs.
+ Vi anvender ligning 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:test_mean_t"
+
+\end_inset
+
+ og skriver
+\begin_inset Formula 
+\[
+z=\frac{7,35-4,91}{2,18\sqrt{\frac{1}{1548}+\frac{1}{1724}}}=32,0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For at finde ud af, om vi kan forkaste hypotese, må vi se på signifikanssandsynl
+igheden eller 
+\begin_inset Formula $p$
+\end_inset
+
+-værdien, der ved en venstresidet alternativhypotese 
+\begin_inset CommandInset citation
+LatexCommand citep
+after "181"
+before "se"
+key "hansen2012statistik"
+
+\end_inset
+
+, når stikprøverne er større end omkring 30, er givet ved
+\begin_inset Formula 
+\[
+p=\Phi(z),
+\]
+
+\end_inset
+
+hvor 
+\begin_inset Formula $\Phi(z)$
+\end_inset
+
+ er den kumulative fordelingsfunktion af den standardnormalfordelte variabel
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ (se afsnit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Normalfordelinger"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Normalfordelinger"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sec:Normalfordelinger"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 10.6 Test af forskel mellem to varianser fra side 177 samt afsnit
+ 10.7 Test for forskel mellem to middelværdier fra side 179 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+.
+ Se også 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bit.ly/18E2Heh"
+
+\end_inset
+
+ på siden CrossValidated om estimering af fællesvariansen, når man tester
+ to gruppemiddelværdier.
+\end_layout
+
+\begin_layout Chapter
+Kontingenstabeller
+\end_layout
+
+\begin_layout Standard
+En kontingenstabel er en tabel, hvor hver observation er opdelt i en række
+ grupper som eksempelvis køn.
+ Tabel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Eksempel-på-kontingenstabel:"
+
+\end_inset
+
+ er et eksempel på en kontingenstabel.
+ Vi kan bruge kontingenstabeller til at teste om fordelingen af de anvendte
+ kategorier (fx køn) er ens i de forskellige stikprøvegrupper (fx lande).
+ Til dette formål anvender vi teststørrelsen
+\begin_inset Formula 
+\begin{equation}
+Q=\sum_{i=1}^{R}\sum_{j=1}^{K}\frac{(N_{ij}-Ê_{ij}){}^{2}}{Ê_{ij}},\label{eq:kontingstab}
+\end{equation}
+
+\end_inset
+
+hvor 
+\begin_inset Formula $N_{ij}$
+\end_inset
+
+ er antallet af individer, 
+\begin_inset Formula $Ê_{ij}$
+\end_inset
+
+ er M.L.E...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Eksempel på kontingenstabel: Kønsopdeling
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Eksempel-på-kontingenstabel:"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Danmark
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Norge
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sverige
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I alt
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mænd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+797
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+800
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+708
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.305
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kvinder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+751
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+733
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+753
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.237
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I alt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.548
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.533
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.461
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.542
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Kilde: Sommereksamen 2013, delopgave 3.4.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Litteraturhenvisninger
+\end_layout
+
+\begin_layout Standard
+Se afsnit 13.3 fra side 222 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansen2012statistik"
+
+\end_inset
+
+ samt afsnit 10.3 fra side 641 i 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "degroot2012probability"
+
+\end_inset
+
+.
+ Se også rettevejledningen til sommereksamen 2013, delopgave 3.4.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "Noter til ØkA"
+options "bibtotoc,chicago"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+Gloseliste
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Gloseliste"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Følgende gloseliste er tænkt som en liste over de ord og begreber, hvis
+ oversættelse mellem dansk og engelsk ikke umiddelbart giver sig selv.
+ De steder, hvor forskellige kilder har anvendt en forskellig terminologi,
+ er kilden sat i parentes efter ordet.
+\end_layout
+
+\begin_layout Section
+Dansk-engelsk
+\end_layout
+
+\begin_layout Description
+Disjunkte
+\begin_inset space ~
+\end_inset
+
+hændelse Disjoint event
+\end_layout
+
+\begin_layout Description
+Fordelingsfunktion (Cumulative) distribution function
+\end_layout
+
+\begin_layout Description
+Foreningshændelse Union
+\end_layout
+
+\begin_layout Description
+Foreningsmængde Union
+\end_layout
+
+\begin_layout Description
+Fælleshændelse Intersection
+\end_layout
+
+\begin_layout Description
+Fællesmængde Intersection
+\end_layout
+
+\begin_layout Description
+Hændelse Event
+\end_layout
+
+\begin_layout Description
+Kontinuert
+\begin_inset space ~
+\end_inset
+
+variabel Continuous variable
+\end_layout
+
+\begin_layout Description
+Kumulativ
+\begin_inset space ~
+\end_inset
+
+fordelingsfunktion Cumulative distribution function
+\end_layout
+
+\begin_layout Description
+Sandsynlighedsfunktion Probability function
+\end_layout
+
+\begin_layout Description
+Tæthedsfunktion Probability density function
+\end_layout
+
+\begin_layout Description
+Udfaldsrum Sample space
+\end_layout
+
+\begin_layout Section
+Engelsk-dansk
+\end_layout
+
+\begin_layout Description
+Continuous
+\begin_inset space ~
+\end_inset
+
+variable Kontinuert variabel
+\end_layout
+
+\begin_layout Description
+Cumulative
+\begin_inset space ~
+\end_inset
+
+distribution
+\begin_inset space ~
+\end_inset
+
+function Kumulativ fordelingsfunktion
+\end_layout
+
+\begin_layout Description
+Disjoint
+\begin_inset space ~
+\end_inset
+
+event Disjunkte hændelse
+\end_layout
+
+\begin_layout Description
+Event Hændelse, begivenhed
+\end_layout
+
+\begin_layout Description
+Intersection Fælleshændelse 
+\begin_inset CommandInset citation
+LatexCommand citep
+after "44"
+key "olesen2007introduktion"
+
+\end_inset
+
+, fællesmængde (forelæsningsnoter)
+\end_layout
+
+\begin_layout Description
+P.f.
+\begin_inset space ~
+\end_inset
+
+(probability
+\begin_inset space ~
+\end_inset
+
+function) Sandsynlighedsfunktion 
+\end_layout
+
+\begin_layout Description
+Probability
+\begin_inset space ~
+\end_inset
+
+density
+\begin_inset space ~
+\end_inset
+
+function Tæthedsfunktion
+\end_layout
+
+\begin_layout Description
+Sample
+\begin_inset space ~
+\end_inset
+
+space Udfaldsrum
+\end_layout
+
+\begin_layout Description
+Union Foreningshændelse 
+\begin_inset CommandInset citation
+LatexCommand citep
+after "44"
+key "olesen2007introduktion"
+
+\end_inset
+
+, foreningsmængde (forelæsningsnoter)
+\end_layout
+
+\end_body
+\end_document
